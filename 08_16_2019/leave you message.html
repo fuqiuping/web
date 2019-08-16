@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var ipt = document.getElementsByTagName('input')[0];
+            var btn = document.getElementsByTagName('button')[0];
+            var ul = document.getElementsByTagName('ul')[0];
+
+            btn.onclick = function () {
+                var text = ipt.value.trim();
+                if (!text) {
+                    alert('请输入留言');
+                    return;
+                }
+
+                var li = document.createElement('li');
+                //
+               
+          
+
+                li.innerHTML = text;//给li添加内容
+                var a = document.createElement('a');
+                li.appendChild(a);
+                a.innerHTML = '删除';
+                a.href = 'javascript:;';
+                a.style.marginLeft = '20px';
+                a.onclick = function () {
+                    ul.removeChild(this.parentNode)
+                };
+              
+
+
+
+                if (!ul.childNodes[0]) {//childNodes[0]是换行，所以是undefiend，取反是真
+                    ul.appendChild(li);//所以第一个走这里
+                } else {
+                    ul.insertBefore(li, ul.childNodes[0]);//因为从第二个开始都是真的取反变假的，所以走这里
+
+                }
+                ipt.value = '';
+            }
+            if (ul.children.length >= 5) {
+                ul.removeChild(ul.children[ul.children.length - 1]);
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text">
+    <button>
+        留言
+    </button>
+    <ul></ul>
+</body>
+
+</html>
