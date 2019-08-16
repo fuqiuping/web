@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var pic = document.getElementById('pic');
+            var n = 0; // 如是n是0，则灯是关闭的，如果n是1，则灯是开着的
+
+            // console.log(pic);
+            pic.onclick = function () {
+                if (n === 0) {
+                    // 开灯
+                    pic.src = 'img/on.png';
+                    n = 1;
+                } else {
+                    // 关灯
+                    pic.src = 'img/off.png';
+                    n = 0;
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <img src="img/off.png" id="pic" alt="">
+</body>
+
+</html>

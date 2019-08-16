@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // document.createElement('标签名') 创建标签
+        // document.createTextNode('文本')  创建文本
+
+        // 父级.appendChild(子级);  子级添加到父级中，放在最后
+
+        window.onload = function () {
+            var body = document.body;
+
+            // var div = document.createElement('div'); // 创建div，飘在js的世界
+            // var text = document.createTextNode('来就来了'); // 创建文本，飘在js的世界
+            // div.appendChild(text); // 文本添加到div中
+            // body.appendChild(div); // div添加到body中
+
+            // ------------------------
+            var div = document.createElement('div'); // 创建div，飘在js的世界
+            div.innerHTML = '来就来了';
+            body.appendChild(div); // div添加到body中
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

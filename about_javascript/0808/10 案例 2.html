@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            box.onOff = true;
+
+            box.onclick = function () {
+                // console.log(this.onOff);
+                if (this.onOff) {
+                    this.style.backgroundColor = 'blue';
+                } else {
+                    this.style.backgroundColor = 'red';
+                }
+                this.onOff = !this.onOff;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

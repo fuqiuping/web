@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var onOff = true; // 没有条件，创造一个条件
+
+            // 点击box，变为蓝色，再点，变为红色
+            // box.onclick = function () {
+            //     if (onOff) {
+            //         this.style.backgroundColor = 'blue';
+            //         onOff = false;
+            //     } else {
+            //         this.style.backgroundColor = 'red';
+            //         onOff = true;
+            //     }
+            // }
+
+            // 优化一
+            box.onclick = function () {
+                if (onOff) {
+                    this.style.backgroundColor = 'blue';
+                } else {
+                    this.style.backgroundColor = 'red';
+                }
+                onOff = !onOff;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

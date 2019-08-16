@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/pic.jpg" alt="">
+
+    <script>
+        var img = document.querySelector('img');
+
+        // 点击图片
+        img.onclick = function () {
+            // 图片隐藏
+            img.style.display = 'none';
+
+            // 创建定时器
+            setTimeout(function () {
+                img.style.display = 'block';
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>

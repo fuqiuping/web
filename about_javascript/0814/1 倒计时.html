@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 500px;
+            background: #ccc;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #btn {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 30px;
+            margin: 0 auto;
+        }
+
+        .p1,
+        .p2 {
+            font-size: 30px;
+        }
+
+        .p2 span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>倒计时</h1>
+        <p>
+            请输入：
+            <input type="text">年
+            <input type="text">月
+            <input type="text">日
+        </p>
+        <span id="btn">开始</span>
+        <p class="p1">
+            现在距离-<i>0000</i>-还剩
+        </p>
+        <p class="p2">
+            <span>00</span>天
+            <span>00</span>小时
+            <span>00</span>分钟
+            <span>00</span>秒
+        </p>
+    </div>
+
+    <script>
+        // 1、点击
+        // 2、获取用户输入
+        // 3、创建未来时间
+        // 4、未来时间 - 当前时间
+
+        var input = document.getElementsByTagName('input');
+        var btn = document.getElementById('btn');
+        var i = document.querySelector('i');
+        var p2 = document.querySelector('.p2');
+        var timer = null;
+
+        // console.log(input, btn, i, p2);
+        btn.onclick = function () {
+            clearInterval(timer);
+
+            var year = input[0].value;
+            var month = input[1].value;
+            var date = input[2].value;
+            i.innerHTML = year + '年' + month + '月' + date + '日';
+
+
+            var d1 = new Date(year, month - 1, date); // 未来时间
+
+            fn();
+            timer = setInterval(fn, 1000);
+
+            function fn() {
+                var d2 = new Date(); // 当前时间
+                var d = parseInt((d1 - d2) / 1000); // 时间差
+                if (d <= 0) {
+                    // 停止的条件
+                    clearInterval(timer);
+                    p2.innerHTML = '时间已经过了';
+                    return;
+                }
+
+                var day = parseInt(d / 86400); // 天
+                var h = parseInt(d % 86400 / 3600); // 小时
+                var m = parseInt(d % 86400 % 3600 / 60); // 分钟
+                var s = d % 60; // 秒
+
+                p2.innerHTML = '<span>' + day + '</span>天<span>' + h + '</span>小时<span>' + m + '</span>分钟<span>' + s + '</span>秒';
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

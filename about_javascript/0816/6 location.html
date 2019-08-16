@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // location 也是window下面的方法，它提供了与当前窗口中加载的文档有关的信息
+        // window.loction
+        // 需要在服务器环境下
+
+        // console.log(location.href); // 返回完整的url
+        // setTimeout(function () {
+        //     location.href = 'https://www.baidu.com/'; // 设置url，则发生跳转
+        // }, 2000);
+
+        // console.log(location.hash); // 设置或返回从井号 (#) 开始的 URL（锚）
+        // location.hash = '#ddd';
+
+        // console.log(location.search); // 设置或返回从问号 (?) 开始的 URL（查询部分）
+
+        // --------------------------------------------------------------------------
+
+        console.log(location.host); // 返回服务器名称和端口号（如果有）
+        console.log(location.hostname); // 返回不带端口号的服务器名称
+        console.log(location.pathname); // 返回URL中的目录和（或）文件名
+        console.log(location.port); // 返回URL中指定的端口号。如果URL中不包含端口号，则这个属性返回空字符串
+        console.log(location.protocol); // 返回页面使用的协议。通常是http:或https
+
+        // location.reload(); // 重新加载（有可能从缓存中加载）
+        // location.reload(true); // 重新加载（从服务器重新加载）
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

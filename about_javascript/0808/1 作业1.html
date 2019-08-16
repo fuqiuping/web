@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1-10000 之间能同时被3、5、7 整除的数，输出到页面上，每6个换行
+        window.onload = function () {
+            var body = document.body;
+            var n = 0;
+
+            for (var i = 1; i <= 10000; i++) {
+
+                if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0) {
+                    // console.log(i);
+                    body.innerHTML += i + '&nbsp;&nbsp;';
+                    n++;
+                    if (n === 6) {
+                        body.innerHTML += '<br>';
+                        n = 0;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 把数组一刀两断
+        var arr = [4, 6, 2, 6, 5, 8, 4, 7, 3];
+
+        console.log(fn(arr));
+
+
+        function fn(arr) {
+            // 终止条件
+            if (arr.length <= 1) {
+                return arr;
+            }
+
+            var num = Math.floor(arr.length / 2); // 中间的下标
+            var numValue = arr.splice(num, 1)[0]; // 取得中间的值，原数组长度减1
+            var left = []; // 存放小于中间值的数
+            var right = []; // 存放大于中间值的数
+
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < numValue) {
+                    // 小于中间值，向左边放
+                    left.push(arr[i]);
+                } else {
+                    // 大于等于中间值，向右边放
+                    right.push(arr[i]);
+                }
+            }
+
+            return fn(left).concat(numValue, fn(right));
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

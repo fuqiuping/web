@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 选择排序
+        // 从第一项起，每一项都和后面所有项依次比较，如果被比较项比当前项小，则两项交换位置
+        var arr = [6, 5, 43, 32, 12];
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    var temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+
+        // 5, 6, 43, 32, 12
+        // 5, 6, 43, 32, 12
+        // 5, 6, 12, 43, 32
+        // 5, 6, 12, 32, 43
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

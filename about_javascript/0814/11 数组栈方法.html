@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var arr = ['刘备', '关羽', '张飞'];
+
+        // 都会修改原数组
+        // 添加都返回数组的长度
+        // 删除都返回被删除的项
+
+        // 数组.push(参数); 将参数添加到数组的未部，返回数组的长度
+        // var n = arr.push('小华子', '小英子');
+        // console.log(arr);
+        // console.log(n);
+
+
+        // 数组.unshift(参数); 将参数添加到数组的头部，返回数组的长度(在IE7及以下，没有返回值)
+        var n = arr.unshift('小华子');
+        console.log(arr);
+        console.log(n);
+
+
+        // 数组.pop(); 删除数组的最后一项，返回被删除的项(一次只能删除一个)
+        // var n = arr.pop();
+        // console.log(arr);
+        // console.log(n);
+
+
+        // 数组.shift(); 删除数组的第一项，返回被删除的项(一次只能删除一个)
+        // var n = arr.shift();
+        // console.log(arr);
+        // console.log(n);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

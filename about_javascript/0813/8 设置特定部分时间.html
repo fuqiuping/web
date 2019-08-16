@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // var d = new Date();
+
+        // d.setFullYear(2020); // 设置年
+        // d.setMonth(15); // 有容错的能力
+        // d.setDate(15); // 设置日
+
+        // console.log(d.toLocaleString());
+
+        // --------------------
+        // 封装一个方法，给你年和月，返回当前这个月的第一天星期几，这个月一共有多少天
+
+        // console.log(new Date(2020, 8 - 1, 1).getDay());
+        // console.log(new Date(2020, 8, 0).getDate());
+
+        console.log(getTime(2021, 2));
+
+
+        function getTime(year, month) {
+            return {
+                week: new Date(year, month - 1, 1).getDay(),
+                date: new Date(year, month, 0).getDate()
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

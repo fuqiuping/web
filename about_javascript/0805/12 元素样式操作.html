@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 元素.style.样式名 = 值;
+        window.onload = function () {
+            // 获取
+            var box = document.getElementById('box');
+            // console.log(box);
+
+            // 点击元素，给元素设置宽100，高100，背景红色
+            box.onclick = function () {
+                // box.style.width = '100px';
+                // box.style.height = '100px';
+                // box.style.backgroundColor = 'red';
+                // box.style.fontSize = '20px';
+                // box.style.color = 'white';
+
+                // 会覆盖原来行间的
+                box.style.cssText = 'width: 200px;height: 200px;background: blue;';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box" style="font-size: 30px;">我就是我</div>
+</body>
+
+</html>

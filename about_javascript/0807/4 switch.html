@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // if适合分支较少的情况，switch适合分支较多的情况
+
+        // switch (条件) {
+        //     case 条件1:
+        //         执行代码;
+        //         break;
+
+        //     case 条件2:
+        //         执行代码;
+        //         break;
+
+        //     case 条件3:
+        //         执行代码;
+        //         break;
+
+        //     default:
+        //         条件都不满足执行代码;
+        // }
+
+
+        // -------------------------------------
+
+        // 星期
+        // console.log(new Date().getDay()); // 0--6  代表 日--六
+
+        switch (new Date().getDay()) {
+            case 1:
+                console.log('今天星期一，一周开始了');
+                break;
+            case 2:
+                console.log('今天星期二，上了一天课了');
+                break;
+            case 3:
+                console.log('今天星期三，上了两天了');
+                break;
+            case 4:
+                console.log('今天星期四，过完今天，还有一天');
+                break;
+            case 5:
+                console.log('今天星期五，明天就冲动了');
+                break;
+            case 6:
+                console.log('今天星期六，冲动是魔鬼');
+                break;
+            case 0:
+                console.log('今天星期天，明天上课了');
+                break;
+            // default:
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

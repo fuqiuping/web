@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 封装一个方法，求一个数的阶乘
+        // 5： 1*2*3*4*5
+        // 5 4 3 2 1
+        // console.log(fn(5));
+        // console.log(fn(10));
+
+        // function fn(num) {
+        //     var n = 1;
+        //     for (var i = num; i >= 1; i--) {
+        //         // console.log(i);
+        //         n *= i;
+        //     }
+        //     return n;
+        // }
+
+
+        // ------------------------
+        // 递归
+        // JavaScript 中允许函数递归调用。
+        // 1、函数调用函数自身（执行递的动作）
+        // 2、最后一次判断一个终止条件。执行归的动作。
+
+        function fn(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                return num * fn(num - 1);
+            }
+        }
+
+        console.log(fn(5));
+        console.log(fn(10));
+
+
+        // 5 * 4 * 3 * 2 * 1
+        // 5 * 4 * 3 * 2 * 1
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

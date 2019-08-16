@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li div:nth-child(2) {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aLi = document.getElementsByTagName('li');
+            // fn(aLi[0]);
+            // fn(aLi[1]);
+            // fn(aLi[2]);
+            // fn(aLi[3]);
+            // fn(aLi[4]);
+
+            for (var i = 0; i < aLi.length; i++) {
+                fn(aLi[i]);
+            }
+
+            // 函数传参
+            // html结构大致要一致，不同的地方要传参进去
+            function fn(obj) {
+                // 第一个实现，通过第一个li得到它下面的元素
+                var aDiv = obj.getElementsByTagName('div');
+                var oSpan = obj.getElementsByTagName('span')[0];
+                var oInput = obj.getElementsByTagName('input')[0];
+                var aA = obj.getElementsByTagName('a');
+
+                // console.log(aDiv, oSpan, oInput, aA);
+                // 编缉
+                aA[0].onclick = function () {
+                    aDiv[0].style.display = 'none';
+                    aDiv[1].style.display = 'block';
+                    oInput.value = oSpan.innerText;
+                }
+
+                // 保存
+                aA[1].onclick = function () {
+                    aDiv[0].style.display = 'block';
+                    aDiv[1].style.display = 'none';
+                    oSpan.innerText = oInput.value;
+                }
+
+                // 取消
+                aA[2].onclick = function () {
+                    aDiv[0].style.display = 'block';
+                    aDiv[1].style.display = 'none';
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div>
+                <span>我的一班</span>
+                <a href="javascript:;">编缉</a>
+            </div>
+            <div>
+                <input type="text">
+                <a href="javascript:;">保存</a>
+                <a href="javascript:;">取消</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>我的一班</span>
+                <a href="javascript:;">编缉</a>
+            </div>
+            <div>
+                <input type="text">
+                <a href="javascript:;">保存</a>
+                <a href="javascript:;">取消</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>论js的学习</span>
+                <a href="javascript:;">编缉</a>
+            </div>
+            <div>
+                <input type="text">
+                <a href="javascript:;">保存</a>
+                <a href="javascript:;">取消</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>下午不困</span>
+                <a href="javascript:;">编缉</a>
+            </div>
+            <div>
+                <input type="text">
+                <a href="javascript:;">保存</a>
+                <a href="javascript:;">取消</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>中午不睡，下午不困</span>
+                <a href="javascript:;">编缉</a>
+            </div>
+            <div>
+                <input type="text">
+                <a href="javascript:;">保存</a>
+                <a href="javascript:;">取消</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>中午不睡，下午不困</span>
+                <a href="javascript:;">编缉</a>
+            </div>
+            <div>
+                <input type="text">
+                <a href="javascript:;">保存</a>
+                <a href="javascript:;">取消</a>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

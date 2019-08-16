@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table width="400px" border="1" cellspacing='0'>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        var oTab = document.getElementsByTagName('table')[0];
+
+        var head = oTab.tHead; // 获取表格头 一个
+        head.style.background = '#ccc';
+
+        var foot = oTab.tFoot; // 获取表格尾 一个
+        foot.style.background = '#ccc';
+
+        var tBody = oTab.tBodies[0]; // 表格体  一堆
+        // console.log(tBody);
+
+        var row = tBody.rows; // 行 tr    一堆
+        row[1].style.background = 'pink';
+        // console.log(row);
+
+        var cell = row[1].cells; // 列 td   一堆
+        cell[1].style.background = 'green';
+        // console.log(cell);
+
+    </script>
+</body>
+
+</html>

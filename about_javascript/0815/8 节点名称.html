@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 节点.nodeName
+        // 元素返回的是大写的标签名，文本返回#text
+        window.onload = function () {
+            var ul = document.getElementById('ul1');
+
+            var li = ul.childNodes;
+            for (var i = 0; i < li.length; i++) {
+                // console.log(li[i].nodeType, li[i].nodeName);
+                console.log(li[i].tagName);
+                
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>11111111</p>
+    <ul id="ul1">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+    </ul>
+</body>
+
+</html>

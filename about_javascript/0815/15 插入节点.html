@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 父元素.insertBefore( 要插入的节点 , 参考的节点 )
+
+        window.onload = function () {
+            // var p = document.getElementsByTagName('p')[0];
+            // var span = document.createElement('span');
+            // span.innerHTML = '我是新来的';
+
+            // document.body.insertBefore(span, p);
+
+
+            // -----------------------------
+            var p = document.getElementsByTagName('p')[0];
+            var div = document.getElementsByTagName('div')[0];
+            div.appendChild(p);
+        }
+    </script>
+</head>
+
+<body>
+    <p>p</p>
+    <div></div>
+</body>
+
+</html>

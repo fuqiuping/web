@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        #list {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        #list p {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background: peachpuff;
+        }
+
+        #list img {
+            margin: 0px 5px;
+        }
+
+        .box li {
+            background: floralwhite;
+        }
+
+        .box li:hover {
+            background: cornflowerblue;
+        }
+
+        .box {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aP = document.querySelectorAll('#list p');
+            var aImg = document.querySelectorAll('#list img');
+            var aUl = document.querySelectorAll('#list ul');
+
+            for (var i = 0; i < aP.length; i++) {
+                aP[i].index = i; // 添加自定义下标
+                aP[i].onclick = function () {
+                    // 先查看p是否有active标识，如果没有，则是要展开，如果有，则是要收缩
+                    if (this.className === 'active') {
+                        // 有
+                        aImg[this.index].src = 'img/ico1.gif';
+                        aUl[this.index].style.display = 'none';
+                        this.className = '';
+                    } else {
+                        // 没有
+                        aImg[this.index].src = 'img/ico2.gif';
+                        aUl[this.index].style.display = 'block';
+                        this.className = 'active';
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+            <p><img src="img/ico1.gif">我的好友</p>
+            <ul class="box">
+                <li>小张</li>
+                <li>小王</li>
+                <li>小孙</li>
+            </ul>
+        </li>
+        <li>
+            <p><img src="img/ico1.gif">我的家人</p>
+            <ul class="box">
+                <li>黄黄</li>
+                <li>胖胖</li>
+                <li>芳芳</li>
+                <li>凤凤</li>
+            </ul>
+        </li>
+        <li>
+            <p><img src="img/ico1.gif">我的坏友</p>
+            <ul class="box">
+                <li>阿黄</li>
+                <li>阿猫</li>
+                <li>阿狗</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

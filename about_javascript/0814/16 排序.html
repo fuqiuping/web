@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var arr = [
+            { name: '武丽昕', num: 78 },
+            { name: '汤文博', num: 38 },
+            { name: '卢文博', num: 58 },
+            { name: '邓钧键', num: 97 },
+            { name: '刘继昂', num: 56 },
+            { name: '栗军安', num: 78 },
+            { name: '屈晓月', num: 98 },
+            { name: '付秋萍', num: 79 }
+        ];
+
+
+        // 以姓名排序
+        // arr.sort(function (a, b) {
+        //     return a.name.localeCompare(b.name, 'zh');
+        // });
+
+        // 以分数排序
+        arr.sort(function (a, b) {
+            return a.num - b.num;
+        });
+
+        console.log(arr);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

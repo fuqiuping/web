@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // break    退出循环
+        // continue 退出当前的循环，立即开启下一次循环
+        // 导致后面代码不执行
+
+        // for (var i = 1; i <= 5; i++) {
+        //     console.log(i);
+        //     if (i === 3) {
+        //         break;
+        //     }
+        // }
+
+
+        // for (var i = 1; i <= 5; i++) {
+        //     console.log(i);
+        //     if (i === 3) {
+        //         continue;
+        //     }
+        // }
+
+
+        // 求1--100之间，求除30 40 55之外所有5的倍数的和
+        // 1--100
+        // 5的倍数
+        // 排除 30 40 55
+        var num = 0;
+        for (var i = 5; i <= 100; i += 5) {
+            if (i === 30 || i === 40 || i === 55) {
+                continue;
+            }
+            num += i;
+        }
+        console.log(num);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

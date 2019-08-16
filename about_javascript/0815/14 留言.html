@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var input = document.getElementsByTagName('input')[0];
+            var button = document.getElementsByTagName('button')[0];
+            var ul = document.getElementsByTagName('ul')[0];
+
+            // 1、点击
+            // 2、获取输入的内容(有内容  没有内容)
+            // 3、创建li，并将内容添进li
+            // 4、将li添加到ul中
+
+            button.onclick = function () {
+                var txt = input.value.trim();
+                if (!txt) {
+                    // 如果没有输入内容，提示并退出
+                    alert('哥们，请输入内容');
+                    return;
+                }
+
+                var li = document.createElement('li');
+                li.innerHTML = txt;
+                ul.appendChild(li);
+
+                input.value = ''; // 清空输入框的内容，方便下次输入
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text">
+    <button>留言</button>
+    <ul></ul>
+</body>
+
+</html>

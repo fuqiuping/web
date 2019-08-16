@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 毕加索 = 巴勃罗·迭戈·荷瑟·山迪亚哥·弗朗西斯科·德·保拉·居安·尼波莫切诺·克瑞斯皮尼亚诺·德·罗斯·瑞米迪欧斯·西波瑞亚诺·德·拉·山迪西玛·特立尼达·玛利亚·帕里西奥·克里托·瑞兹·布拉斯科·毕加索
+
+        // 变量：
+        // var 变量名 = 值;
+
+        // 1、先声明，再赋值
+        var a; // 声明
+        a = 10; // 赋值
+
+        // 2、声明并赋值
+        var a = 10;
+
+        // 3、一次声明多个
+        var a = 10,
+            b = 5,
+            c = 20;
+
+
+        // 变量名的命名规则：
+        // 1、只能使用英文、数字、$、_
+        // 2、不能以数字开头
+        // 3、不能使用关键字、保留字
+
+        // 建议：
+        // 1、命名要有语义化
+        // 2、推荐驼峰命名 fontSize
+        // 3、区分大小写
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+
+
+            // 点击
+            box.onclick = function () {
+                alert('哥们，点了我');
+            };
+
+            // 双击
+            // box.ondblclick = function () {
+            //     alert('哥们，点了我');
+            // };
+
+            // 移入
+            // box.onmouseover = function () {
+            //     console.log('移入了');
+            // };
+
+            // 移出
+            // box.onmouseout = function () {
+            //     console.log('移出了');
+            // };
+
+            // 移入
+            // box.onmouseenter = function () {
+            //     console.log('进入了');
+            // };
+
+            // 移出
+            // box.onmouseleave = function () {
+            //     console.log('出去了');
+            // };
+
+            // 在元素上滑动
+            // box.onmousemove = function () {
+            //     console.log('1');
+            // };
+
+            // 按下
+            // box.onmousedown = function () {
+            //     console.log('按下了');
+            // };
+
+            // 抬起
+            // box.onmouseup = function () {
+            //     console.log('抬起了');
+            // };
+
+            // 点击右键触发
+            box.oncontextmenu = function () {
+                console.log('点击右键了');
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

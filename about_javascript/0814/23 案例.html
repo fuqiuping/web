@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // var arr = [3, 5, 4, 3, 4, 3, 2, 6, 7, 8, 33, 4, 3];
+        // console.log(fn(arr, 3)); // 4
+        // console.log(fn(arr, 4)); // 3
+
+        // // 封装一个方法，查找数组中的某一项出现的次数
+        // function fn(arr, item) {
+        //     var count = 0;
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (arr[i] === item) {
+        //             count++;
+        //         }
+        //     }
+        //     return count;
+        // }
+
+
+
+        // ---------------------------
+        // 完成以下代码段，实现b数组对a数组的拷贝，方法越多越好
+        var a = [1, "yes", 3];
+
+
+        // var b = a; // 不行
+        // a.push(5);
+        // console.log(b);
+
+        // 方式一
+        // var b = a.concat();
+        // a.push(5);
+        // console.log(b);
+
+        // 方式二
+        // var b = a.slice();
+        // a.push(5);
+        // console.log(b);
+
+        // 方式三
+        var b = [];
+        for (var i = 0; i < a.length; i++) {
+            b.push(a[i]);
+        }
+        a.push(5);
+        console.log(b);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

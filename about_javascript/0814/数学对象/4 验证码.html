@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 从a-z A-Z 0-9之间随机生成一个四位数的验证码
+
+        for (var i = 0; i < 20; i++) {
+            console.log(fn(6));
+        }
+
+        function fn(len) {
+            var str1 = 'abcdefghijklmnopqrstuvwxyz';
+            var str2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var str3 = '0123456789';
+            var str = str1 + str2 + str3;
+            var temp = '';
+
+            for (var i = 0; i < len; i++) {
+                var n = getRandom(0, str.length - 1);
+                temp += str[n];
+            }
+            return temp;
+        }
+
+        // 随机数公式
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

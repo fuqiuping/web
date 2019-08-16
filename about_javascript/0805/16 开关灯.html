@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var pic = document.getElementById('pic');
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+
+            // 开
+            btn1.onclick = function(){
+                pic.src = 'img/on.png';
+            }
+
+            // 关
+            btn2.onclick = function(){
+                pic.src = 'img/off.png';
+            }
+
+            // -----------------------
+            // if else
+            // 一个按钮控制开关
+            // 不要按钮，点击图片控制开关
+        }
+    </script>
+</head>
+<body>
+    <img src="img/off.png" id="pic" alt="">
+    <button id="btn1">开</button>
+    <button id="btn2">关</button>
+</body>
+</html>

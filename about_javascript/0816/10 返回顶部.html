@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 80px;
+            height: 80px;
+            background: red;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var span = document.getElementsByTagName('span')[0];
+            var timer = null;
+
+            // 在窗口上滚动
+            window.onscroll = function () {
+                var top = document.documentElement.scrollTop || document.body.scrollTop;
+                // console.log(top);
+                if (top >= 300) {
+                    span.style.display = 'block';
+                } else {
+                    span.style.display = 'none';
+                }
+            }
+
+            // 点击返回顶部
+            span.onclick = function () {
+                clearInterval(timer);
+                var top = document.documentElement.scrollTop || document.body.scrollTop;
+                timer = setInterval(function () {
+                    top -= 50;
+                    document.documentElement.scrollTop = top;
+                    document.body.scrollTop = top;
+
+                    if (top <= 0) {
+                        clearInterval(timer);
+                    }
+                }, 30);
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 3000px;">
+    <span></span>
+</body>
+
+</html>

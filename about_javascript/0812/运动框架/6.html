@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+    </style>
+    <script>
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                return window.getComputedStyle(obj)[attr];
+            } else {
+                return obj.currentStyle[attr];
+            }
+        }
+
+        window.onload = function () {
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var box = document.getElementById('box');
+
+            // 向右
+            btn1.onclick = function () {
+                clearInterval(box.timer); // 先清
+                box.timer = setInterval(function () {
+                    var speed = parseInt(getStyle(box, 'left')); // 当前的位置
+                    speed += 10; // 下一步应该运动到的位置
+
+                    if (speed >= 500) {
+                        clearInterval(box.timer);
+                        speed = 500;
+                    }
+
+                    box.style.left = speed + 'px'; // 再把位置赋给盒子
+                }, 30);
+            }
+
+            // 向左
+            btn2.onclick = function () {
+                clearInterval(box.timer); // 先清
+                box.timer = setInterval(function () {
+                    var speed = parseInt(getStyle(box, 'left')); // 当前的位置
+                    speed -= 10; // 下一步应该运动到的位置
+
+                    if (speed <= 0) {
+                        clearInterval(box.timer);
+                        speed = 0;
+                    }
+
+                    box.style.left = speed + 'px'; // 再把位置赋给盒子
+                }, 30);
+            }
+
+            // 问题：点一下，执行一次（解决：加定时器）
+            // 问题：不能停止
+            // 问题：多次点击会加速 
+            // 问题：对外界依赖过多（把timer作为盒子的自定义属性）
+            // 问题：只能从左向右，还不能从右向左
+            // 问题：没有封装
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">向右</button>
+    <button id="btn2">向左</button>
+    <div id="box"></div>
+</body>
+
+</html>

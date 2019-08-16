@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 封装一个方法
+        // 从20--100之间，随机生成10个不重复的数，存入一个数组中，并排序
+        // for (var i = 0; i < 20; i++) {
+        //     console.log(fn(20, 100, 10));
+        // }
+
+
+        // 1--33 生 6
+        console.log(fn(1, 33, 6));
+
+        // 1--16 生 1
+        console.log(fn(1, 16, 1));
+
+
+        // 随机数公式
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        function fn(min, max, len) {
+            var arr = []; // 存储找到的值
+
+            for (var i = 0; i < len; i++) {
+                var n = getRandom(min, max);
+                if (arr.indexOf(n) === -1) {
+                    arr.push(n);
+                } else {
+                    // i--;
+                    len++;
+                }
+            }
+
+            arr.sort(function (a, b) {
+                return a - b;
+            });
+
+            return arr;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

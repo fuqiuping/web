@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组.sort(); 
+        // 默认以字符串排序，如果按数字排，需要传入一个比较函数做为参数
+        // 我们不仅可以直接对数组的项进行排序，当数组的项为对象时，还可以根据对象的某个属性值进行排序。
+
+        var arr = [2, 3, 5, 7, 1, 11];
+
+        // arr.sort();
+        arr.sort(function (a, b) {
+            // return a - b; // 升序
+            return b - a; // 降序
+        });
+
+        console.log(arr);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

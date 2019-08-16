@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+    </style>
+    <script src="js/move.js"></script>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            var box = document.getElementById('box');
+            btn.onclick = function () {
+                move(box, 'left', 500, function () {
+                    move(box, 'top', 500, function () {
+                        move(box, 'left', 0, function () {
+                            move(box, 'top', 50, function () {
+                                move(box, 'width', 500);
+                            })
+                        })
+                    })
+                })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+</body>
+
+</html>

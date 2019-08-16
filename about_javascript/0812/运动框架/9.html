@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+    </style>
+    <script>
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                return window.getComputedStyle(obj)[attr];
+            } else {
+                return obj.currentStyle[attr];
+            }
+        }
+
+        // 参数：元素 样式名 目标 回调
+        function move(obj, attr, target, callback) {
+            clearInterval(obj.timer); // 先清
+            obj.timer = setInterval(function () {
+                var speed = parseInt(getStyle(obj, attr)); // 当前的位置
+                var dir = speed < target ? 10 : -10; // 如果当前值比目标小，则加过去，否则减过去
+                speed += dir; // 下一步应该运动到的位置
+
+                if ((speed >= target && dir > 0) || (speed <= target && dir < 0)) {
+                    speed = target;
+                }
+
+                obj.style[attr] = speed + 'px'; // 再把位置赋给盒子
+
+                // 清定时器，执行回调代码
+                if (speed === target) {
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+            }, 30);
+        }
+
+        window.onload = function () {
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var box = document.getElementById('box');
+
+            // 向右
+            btn1.onclick = function () {
+                move(box, 'left', 500, function () {
+                    console.log('我到了');
+                });
+            }
+
+            // 向左
+            btn2.onclick = function () {
+                move(box, 'left', 0);
+            }
+
+            // 问题：点一下，执行一次（解决：加定时器）
+            // 问题：不能停止
+            // 问题：多次点击会加速 
+            // 问题：对外界依赖过多（把timer作为盒子的自定义属性）
+            // 问题：只能从左向右，还不能从右向左
+            // 问题：没有封装
+            // 问题：dir不应该由用户确定，而应该由封装函数决定
+            // 问题：运运执行完了之后，执行一个回调函数
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">向右</button>
+    <button id="btn2">向左</button>
+    <div id="box"></div>
+</body>
+
+</html>

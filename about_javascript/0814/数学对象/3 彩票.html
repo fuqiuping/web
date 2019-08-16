@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 30px;
+            line-height: 60px;
+            color: white;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .blue {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>开始</button>
+    <button>停止</button>
+    <p>
+        <span class="red">00</span>
+        <span class="red">00</span>
+        <span class="red">00</span>
+        <span class="red">00</span>
+        <span class="red">00</span>
+        <span class="red">00</span>
+        <span class="blue">00</span>
+    </p>
+
+    <script>
+        var btn = document.getElementsByTagName('button');
+        var red = document.getElementsByClassName('red');
+        var blue = document.getElementsByClassName('blue')[0];
+        var timer = null;
+
+        // 开始
+        btn[0].onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var arr1 = fn(1, 33, 6); // [3,6,8,9,10,16]
+                var arr2 = fn(1, 16, 1); // [1]
+
+                for (var i = 0; i < arr1.length; i++) {
+                    red[i].innerHTML = toTwo(arr1[i]);
+                }
+                blue.innerHTML = toTwo(arr2[0]);
+            }, 100);
+        }
+
+        // 停止
+        btn[1].onclick = function () {
+            clearInterval(timer);
+        }
+
+
+
+
+        // 随机数公式
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        function fn(min, max, len) {
+            var arr = []; // 存储找到的值
+
+            for (var i = 0; i < len; i++) {
+                var n = getRandom(min, max);
+                if (arr.indexOf(n) === -1) {
+                    arr.push(n);
+                } else {
+                    // i--;
+                    len++;
+                }
+            }
+
+            arr.sort(function (a, b) {
+                return a - b;
+            });
+
+            return arr;
+        }
+
+        function toTwo(n) {
+            if (n < 10) {
+                return '0' + n;
+            } else {
+                return '' + n;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // + - * / % ++  --
+
+        // +
+        // 如果两边都是数字，则就是普通的数学计算
+        // 如果有一边是字符串，则另一边也转成字符串，变成字符串的拼接
+        // 如果没有字符串，则调用Number方法，转成数字，再进行相加
+        // 如果有一边是对象，则对象调用toString，再进行计算
+
+        // var a = 5;
+        // var b = '10';
+        // console.log(a + b);
+
+        // -------------------------
+        // var a = 5;
+        // var b = 10;
+        // console.log('5和10的和是15');
+        // 从左向右，一步一步计算的，可以加括号，用于提高优先级
+        // console.log(a + '和' + b + '的和是' + (a + b));
+        // '5和'
+        // '5和10'
+        // '5和10的和是'
+        // '5和10的和是5'
+        // '5和10的和是510'
+
+        // -----------------------
+        // console.log(true + false); // 1
+        // console.log(true + 'false'); // truefalse
+        // console.log(true + ''); // true
+        // console.log(true + undefined); // NaN
+        // console.log(true + [true]); // truetrue
+
+
+        // -----------------------------------------------
+        // - * / 
+        // var a = '10';
+        // var b = 5;
+        // console.log(a - b); // 5
+
+        // var a = 5 - true; // 4
+        // var b = NaN - 1; // NaN
+        // var c = 5 - 3; // 2
+        // var d = 5 - ""; // 5
+        // var e = 5 - "2"; // 3
+        // var f = 5 - null; // 5
+        // console.log(a, b, c, d, e, f);
+
+        // -----------------------
+        // 取模 取余
+        // 结论：一个递增的变量取模几，返回的是一个0到几之间的一个数
+        // console.log(0 % 3); // 0
+        // console.log(1 % 3); // 1
+        // console.log(2 % 3); // 2
+        // console.log(3 % 3); // 0
+        // console.log(4 % 3); // 1
+        // console.log(5 % 3); // 2
+        // console.log(6 % 3); // 0
+
+
+        // ------------------
+        // 加加减减
+        // 加加在前，先自增，后参与运算
+        // 加加在后，先参与运算，再自增
+        // ++ --
+        // var a = 5;
+        // a++; // a = a + 1;
+        // ++a;
+        // console.log(a);
+
+        // var c = 2;
+        // var f = 2;
+        // var d = c++; // 先赋值后自增 1
+        // var e = ++f; // 先自增 1 后赋值
+        // console.log(d, e);
+
+        // var num1 = 2;
+        // var num2 = 20;
+        // var num3 = num1-- + num2;
+        // var num4 = num1 + num2;
+        // console.log(num3, num4);
+
+
+        // var a = 1;
+        // var b = ++a + a++;
+        // console.log(b, a)
+
+        // 加加具有隐式类型转换
+        var d = '4';
+        console.log(d++); // 4
+        console.log(d);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

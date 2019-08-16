@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // .的形式
+        // 获取：元素.属性名
+        // 设置：元素.属性名 = 值
+
+        // []的形式
+        // 获取：元素['属性名']
+        // 设置：元素['属性名'] = 值
+        window.onload = function () {
+            var box = document.getElementById('box');
+
+            // 点击盒子，打印它的title
+            box.onclick = function () {
+                // console.log(box.title); // 获取
+                // box.title = '东风吹，战鼓擂';
+
+                // --------------------
+                // console.log(box['title']);
+                // box['title'] = 'abc';
+
+                // ---------------------
+                // 中括号的形式比点的形式强大，还可以使用变量
+                var t = 'title';
+                console.log(box[t]);
+                box[t] = '456';
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box" title="不一样的烟火">我就是我</div>
+</body>
+
+</html>

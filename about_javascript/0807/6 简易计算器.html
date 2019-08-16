@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            width: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var t1 = document.getElementById('t1');
+            var t2 = document.getElementById('t2');
+            var t3 = document.getElementById('t3');
+            var sel = document.getElementById('sel');
+            var btn = document.getElementById('btn');
+
+            // 点击按钮
+            btn.onclick = function () {
+                var v1 = t1.value - 0;
+                var v2 = t2.value - 0;
+                var selVal = sel.value; // 是一个字符串
+                // console.log(v1, v2, selVal);
+
+                switch (selVal) {
+                    case '+':
+                        t3.value = v1 + v2;
+                        break;
+                    case '-':
+                        t3.value = v1 - v2;
+                        break;
+                    case '*':
+                        t3.value = v1 * v2;
+                        break;
+                    case '/':
+                        t3.value = v1 / v2;
+                        break;
+                    // default:
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="t1">
+    <select id="sel">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="t2">
+    <button id="btn">=</button>
+    <input type="text" id="t3">
+</body>
+
+</html>

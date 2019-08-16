@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 700px;
+            margin: 50px auto;
+        }
+
+        #box img {
+            float: left;
+            width: 300px;
+            height: 250px;
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function getPos(obj) {
+            var l = 0;
+            var t = 0;
+            while (obj) {
+                l += obj.offsetLeft;
+                t += obj.offsetTop;
+                obj = obj.offsetParent;
+            }
+            return {
+                left: l,
+                top: t
+            }
+        }
+
+        window.onload = function () {
+            var aImg = document.getElementsByTagName('img');
+            var clientHeight = document.documentElement.clientHeight; // 可视区的高
+
+            auto(); // 一开始就执行一次
+            window.onscroll = auto; // 滚动时，再执行
+
+            function auto() {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // 滚动条的高
+
+                for (var i = 0; i < aImg.length; i++) {
+                    var img = aImg[i];
+                    var t = getPos(img).top; // 当前图片到顶边的距离
+
+                    if (!img.onOff && t < scrollTop + clientHeight) {
+                        img.src = img.getAttribute('_src');
+                        img.onOff = true;
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+        <img src="img/white.JPG" _src="img/1.jpg" alt="">
+        <img src="img/white.JPG" _src="img/2.jpg" alt="">
+        <img src="img/white.JPG" _src="img/3.jpg" alt="">
+        <img src="img/white.JPG" _src="img/4.jpg" alt="">
+        <img src="img/white.JPG" _src="img/5.jpg" alt="">
+        <img src="img/white.JPG" _src="img/6.jpg" alt="">
+        <img src="img/white.JPG" _src="img/7.jpg" alt="">
+    </div>
+</body>
+
+</html>

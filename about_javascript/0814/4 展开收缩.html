@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            padding: 20px;
+            border: 10px solid #ccc;
+        }
+
+        div p {
+            margin: 0;
+            padding: 0;
+            display: inline;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var p = document.querySelector('p');
+            var a = document.querySelector('a');
+            var str = p.innerHTML; // 原始数据
+
+            p.innerHTML = str.slice(0, 19) + '……';
+            a.innerHTML = '展开';
+
+            a.onclick = function () {
+                if (a.innerHTML === '展开') {
+                    p.innerHTML = str;
+                    a.innerHTML = '收缩';
+                } else {
+                    p.innerHTML = str.slice(0, 19) + '……';
+                    a.innerHTML = '展开';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>周亦涵来自广州，读三年级，自小爱好游泳。她8月13日告诉澎湃新闻（www.thepaper.cn），去年，她的爸爸成功横渡琼州海峡，这让她萌生了挑战的念头；为了备战，她从一年前开始有针对性训练，一周游6天，每天利用空闲时间游数公里。8月7日凌晨5时许，周亦涵在海南海口市新埠岛海岸下水，13个小时后，成功抵达广东湛江市徐闻县新港防波堤海岸。“有一点点开心，但还是很累。”周亦涵说，这一路上，她被水母蜇过，遭水流冲击困在原地，爸爸一度劝她上船放弃，但最终她坚持了下来。
+        </p>
+        <a href="javascript:;"></a>
+    </div>
+</body>
+
+</html>

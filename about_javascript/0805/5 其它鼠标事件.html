@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 毕加索 = 巴勃罗·迭戈·荷瑟·山迪亚哥·弗朗西斯科·德·保拉·居安·尼波莫切诺·克瑞斯皮尼亚诺·德·罗斯·瑞米迪欧斯·西波瑞亚诺·德·拉·山迪西玛·特立尼达·玛利亚·帕里西奥·克里托·瑞兹·布拉斯科·毕加索
+
+
+        window.onload = function () {
+            // 点击
+            // document.getElementById('box').onclick = function () {
+            //     alert('哥们，点了我');
+            // };
+
+            // 双击
+            // document.getElementById('box').ondblclick = function () {
+            //     alert('哥们，点了我');
+            // };
+
+            // 移入
+            // document.getElementById('box').onmouseover = function () {
+            //     console.log('移入了');
+            // };
+
+            // 移出
+            // document.getElementById('box').onmouseout = function () {
+            //     console.log('移出了');
+            // };
+
+            // 移入
+            // document.getElementById('box').onmouseenter = function () {
+            //     console.log('进入了');
+            // };
+
+            // 移出
+            // document.getElementById('box').onmouseleave = function () {
+            //     console.log('出去了');
+            // };
+
+            // 在元素上滑动
+            // document.getElementById('box').onmousemove = function () {
+            //     console.log('1');
+            // };
+
+            // 按下
+            // document.getElementById('box').onmousedown = function () {
+            //     console.log('按下了');
+            // };
+
+            // 抬起
+            // document.getElementById('box').onmouseup = function () {
+            //     console.log('抬起了');
+            // };
+
+            // 点击右键触发
+            document.getElementById('box').oncontextmenu = function () {
+                console.log('点击右键了');
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

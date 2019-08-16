@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 截取字符串，不影响原字符串
+
+        // 字符串.slice(起始位置，结束位置); 推荐使用的
+        // 1、不写参数，返回全部
+        // 2、有一个参数，从参数处开始，到结束
+        // 3、有两个参数，从参数处开始，到结束，但是不包括结束处的位置
+        // 4、参数为负值，则同长度相加
+        // 5、如果参数不为负，且前面的比后面的参数大，则返回空字符
+        var str = 'abcdefg';
+        console.log(str.slice()); // abcdefg
+        console.log(str.slice(2)); // cdefg
+        console.log(str.slice(2, 5)); // cde
+        console.log(str.slice(2, -2)); // cde
+        console.log(str.slice(4, 3)); // ''
+        console.log(str.slice(3, 3+2)); // de
+
+
+        // 字符串.substring(起始位置，结束位置);
+        console.log(str.substring(2, 5)); // cde
+        console.log(str.substring(4, 3)); // d 前面比后面大，则两个交换位置
+
+        // 字符串.substr(起始位置, 长度);
+        console.log(str.substr(3, 2)); // de
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

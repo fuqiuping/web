@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var h1 = document.getElementsByTagName('h1')[0];
+            var d1 = new Date(2019, 7, 13, 16, 24, 0); // 未来时间
+            var timer = null;
+
+            fn();
+            timer = setInterval(fn, 1000);
+
+            function fn() {
+                var d2 = new Date();
+                var d = parseInt((d1 - d2) / 1000); // 在相减之前，先调自己的valueOf方法，转成时间戳
+
+                if (d <= 0) {
+                    clearInterval(timer);
+                    h1.innerHTML = '哥们，开抢';
+                    return;
+                }
+
+                var date = parseInt(d / 86400); // 天
+                var h = parseInt(d % 86400 / 3600); // 小时
+                var m = parseInt(d % 86400 % 3600 / 60); // 分钟
+                var s = d % 60; // 秒
+
+                h1.innerHTML = date + '天' + h + '小时' + m + '分钟' + s + '秒';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1></h1>
+</body>
+
+</html>

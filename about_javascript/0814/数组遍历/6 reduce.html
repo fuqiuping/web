@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组.reduce(function (prev, item, index, array) { }, 起始值);
+        // 第二个参数可有可无
+        // 该方法接受一个函数，返回一个值。该方法会从一个累加值开始，不断对累加值和数组中的后续元素调用该函数，直到数组中的最后一个元素，最后返回得到的累加值。
+
+        // 当没有第二个参数时，执行的次数为：数组长度 - 1，第一次循环发生在数组的第二项，上一个值为数组的第一项
+        // 当有第二个参数时，执行的次数为：数组的长度，第一次循环发生在数组的第一项上，上一个值是第二个参数
+
+        var arr = [4, 2, 7, 5];
+
+        // var num = 0;
+        // for (var i = 0; i < arr.length; i++) {
+        //     num += arr[i];
+        // }
+        // console.log(num);
+
+        // var n = arr.reduce(function (prev, item, index, array) {
+        //     console.log(prev, item);
+        //     return prev + item;
+        // });
+
+        // var n = arr.reduce(function (prev, item, index, array) {
+        //     console.log(prev, item);
+        //     return prev + item;
+        // }, 10);
+
+        // var n = arr.reduce(function (prev, item, index, array) {
+        //     console.log(prev, item);
+        //     return prev + item;
+        // }, '');
+
+        // var n = arr.reduceRight(function (prev, item, index, array) {
+        //     return prev + item;
+        // }, '');
+
+        // console.log(n);
+
+
+        // -----------------------------------------------------------------------------
+        // 将一个字符串翻转
+        var str = 'abc'; // cba
+
+        // 方式一
+        // var s = str.split('').reverse().join('');
+        // console.log(s);
+
+        // 方式二
+        // var s = '';
+        // for (var i = str.length - 1; i >= 0; i--) {
+        //     s += str[i];
+        // }
+        // console.log(s);
+
+        // 方式三
+        var s = str.split('').reduceRight(function (prev, item) {
+            return prev + item;
+        });
+        console.log(s);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

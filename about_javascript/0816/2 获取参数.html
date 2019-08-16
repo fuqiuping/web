@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = 'http://item.taobo.com/item.html?a=1&b=2&c=&d=xxx&e';
+        console.log(fn(str));
+
+        // {
+        //     a: '1',
+        //     b: '2',
+        //     c: '',
+        //     d: 'xxx',
+        //     e: undefined
+        // }
+
+        function fn(str) {
+            var o = {}; // 创建一个对象，拆分的属性名和属性值向这个上面添加
+            var n = str.indexOf('?'); // 取得?号的下标
+            str = str.slice(n + 1); // 取得?号以后的字符串
+            // console.log(str); // a=1&b=2&c=&d=xxx&e
+            var arr = str.split('&'); // 将这个字符串拆分成一个数组
+            // console.log(arr); // [ "a=1", "b=2", "c=", "d=xxx", "e" ]
+
+            for (var i = 0; i < arr.length; i++) {
+                // console.log(arr[i].split('='));
+                var arr1 = arr[i].split('=');
+
+                o[arr1[0]] = arr1[1];
+            }
+            return o;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

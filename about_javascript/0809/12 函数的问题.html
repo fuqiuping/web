@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 实参和形参个数不一致的时候，多传的白传，少传的值为undefined
+        // 函数名同名的情况下，后面的函数覆盖前面的
+
+
+        // function fn(a, b) {
+        //     console.log(a, b);
+        // }
+
+        // fn(3, 4);
+        // fn(4, 5, 87, 6);
+        // fn(6);
+
+
+        // --------------------
+        // function fn(a, b, c, d) {
+        //     console.log(a + b + c + d); // NaN
+        // }
+        // fn(4, 5);
+
+
+        // ----------------------
+        function fn() {
+            console.log(1);
+        }
+        fn();
+        function fn() {
+            console.log(2);
+        }
+        fn();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

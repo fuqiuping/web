@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="查找">
+    <input type="text" placeholder="替换">
+    <button>按钮</button>
+    <p>周亦涵来自广州，读三年级，自小爱好游泳。她8月13日告诉澎湃新闻（www.thepaper.cn），去年，她的爸爸成功横渡琼州海峡，这让她萌生了挑战的念头；为了备战，她从一年前开始有针对性训练，一周游6天，每天利用空闲时间游数公里。8月7日凌晨5时许，周亦涵在海南海口市新埠岛海岸下水，13个小时后，成功抵达广东湛江市徐闻县新港防波堤海岸。“有一点点开心，但还是很累。”周亦涵说，这一路上，她被水母蜇过，遭水流冲击困在原地，爸爸一度劝她上船放弃，但最终她坚持了下来。
+    </p>
+
+    <script>
+        var input = document.getElementsByTagName('input');
+        var btn = document.getElementsByTagName('button')[0];
+        var p = document.getElementsByTagName('p')[0];
+        var str = p.innerHTML; // 原始数据
+
+        btn.onclick = function () {
+            var v1 = input[0].value; // 第一个输入框
+            var v2 = input[1].value; // 第二个输入框
+            var arr = str.split(v1);
+
+            if (v1 && !v2) {
+                // 查找
+                p.innerHTML = arr.join('<span>' + v1 + '</span>');
+            } else if (v1 && v2) {
+                // 替换
+                p.innerHTML = arr.join('<span>' + v2 + '</span>');
+            }
+        }
+    </script>
+</body>
+
+</html>

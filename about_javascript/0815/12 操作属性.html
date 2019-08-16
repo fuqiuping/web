@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 对原生就有的属性好使，对自定义的属性不好使
+        // 元素.属性名
+        // 元素[属性名]
+
+        // 即可以操作原生的属性，也可以操作自定义的属性，在html结构中是可见
+        // 元素.getAttribute(属性名);
+        // 元素.setAttribute(属性名, 值);
+        // 元素.removeAttribute(属性名);
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+
+            // console.log(box.title);
+            // box.title = '123';
+            // console.log(box['title']);
+            // box['title'] = 'abc';
+
+            // console.log(box.aaa); // undefined
+
+            // ------------------------------
+            // console.log(box.getAttribute('aaa')); 
+            // box.setAttribute('aaa', '123');
+            // box.removeAttribute('aaa');
+
+            box.setAttribute('abc', '123');
+
+            // console.log(box.getAttribute('title')); 
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box" title="东风吹" aaa="战鼓擂">我就是我</div>
+</body>
+
+</html>

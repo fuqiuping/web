@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 对象：本质上是一组无序的名值对
+        window.onload = function () {
+            var box = document.getElementById('box');
+            console.log(box, typeof box); // object 从页面中获取的所有元素都是object类型
+            console.log(window, typeof window); // object
+            console.log(document, typeof document); // object
+
+            // -----------------------
+            var obj = { // 对象
+                age: 3,
+                name: '张三',
+                fn: '前端开发'
+            };
+            console.log(obj, typeof obj); // object
+
+
+            // ------------------------
+            var arr = [1, 2, 3]; // 数组
+            console.log(arr, typeof arr);
+
+            // -------------------
+            // 函数
+            var fn = function(){};
+            console.log(typeof fn); // function
+            
+            
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">111</div>
+</body>
+
+</html>

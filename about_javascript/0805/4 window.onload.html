@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 获取元素 document.getElementById('box')
+        // 点击（事件）onclick
+        // 发生一件事 function(){}
+
+        // window.onload 是页面相关的东西（css js 图片等）都加载完成，才会执行
+        window.onload = function () {
+            document.getElementById('box').onclick = function () {
+                alert('哥们，点了我');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

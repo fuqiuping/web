@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 获取：图片.src
+        // 设置：图片.src = 地址
+        window.onload = function(){
+            var pic = document.getElementById('pic');
+            pic.onclick = function(){
+                // var s = pic.src;
+                // console.log(s); 
+
+                pic.src = 'img/on.png';
+
+                // file:///C:/Users/ibm/Desktop/0805/0805/img/off.png
+                // img/off.png
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="img/off.png" id="pic" alt="">
+</body>
+</html>

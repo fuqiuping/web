@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 作用域
+        // 作用：获取 操作
+        // 域：范围（全局的域 局部的域）
+
+        // 浏览器相当于特战小分队
+        // 怎么执行js
+        // 至少分为两步：
+        // 1、预解析
+        // 找var 函数 参数（var统一给一个值undefined，函数就是函数整体，参数同var），找到之后把它们存在一个仓库里
+        // 如果var同var 同名，则后面的覆盖前面的
+        // 如果函数和函数同名，则后面的覆盖前面的
+        // 如果函数同var同名，则函数覆盖var
+
+        // 如果遇到函数，又开新的域（查找时，如果自己的仓库里面没有值，则到上一级仓库里面找，如果也没有，则到全局里找，全局也没有，则报错）
+
+        // 2、逐行解读
+        // 从上到下，一行一行的执行，遇到读取值，就去仓库里面找，遇到表达式，就去仓库里面修改
+
+
+        // -------------------------------
+        // alert(a);
+        // a = 1;
+
+
+        // console.log(a);
+        // console.log(fn1);
+        // var a = 1;
+        // function fn1() { alert(2); }
+        // console.log(a);
+        // console.log(fn1);
+
+        // --------------------------
+
+        // alert(a);
+        // var a = 1;
+        // alert(a);
+        // function a() { alert(2); }
+        // alert(a);
+        // var a = 3;
+        // alert(a);
+        // function a() { alert(4); }
+        // alert(a);
+        // alert(typeof a)
+        // a();
+
+        // --------------------------
+        // var a = 1;
+        // function fn1() {
+        //     alert(a);
+        //     var a = 2;
+        // }
+        // fn1();
+        // alert(a);
+
+
+        // ---------------------
+        // var a = 1;
+        // function fn1() {
+        //     alert(a);
+        //     a = 2;
+        // }
+        // fn1();
+        // alert(a);
+
+
+        // ------------------
+        // var a = 1;
+        // function fn1(a) {
+        //     alert(a);
+        //     a = 2;
+        // }
+        // fn1();
+        // alert(a);
+
+
+        // ----------------
+        // var a = 1;
+        // function fn1(a) {
+        //     alert(a);
+        //     a = 2;
+        // }
+        // fn1(a);
+        // alert(a);
+
+        // ---------------------
+        // var a = 2;
+        // function test() {
+        //     var a = 3;
+        //     var b = 4;
+        //     c = 5; // 没有var，为全局
+        //     alert(a); // ?
+        // }
+
+        // test();
+        // alert(c); // ?
+        // alert(b); // ?
+
+        // ----------------------------------
+        // 关于何时对参数赋值
+        // 参数在预解析之后立即被赋值，但是如果参数同函数同名，则参数失败，存函数，如果参数和var同名，则参数胜
+        // function fn(a) {
+        //     console.log(a);
+        //     var a = 2;
+        //     function a() { }
+        //     console.log(a)
+        // }
+        // fn(1);
+
+
+        // -----------------------------
+        // var num = 0;
+        // function fn1() {
+        //     num++;
+        // }
+        // function fn2() {
+        //     num--;
+        // }
+        // fn2();
+        // fn1();
+        // fn2();
+        // alert(num);
+
+
+        // --------------------
+        // console.log(a);
+        // function a(a) {
+        //     console.log(a);
+        //     var a = 10;
+        //     console.log(a);
+        //     function a() { };
+        //     console.log(a);
+        // }
+        // a(1);
+        // a = 0;
+        // var a;
+        // console.log(a);
+
+
+        // -----------------------
+        var x = 1,
+            y = z = 0;
+
+
+        y = add(x);
+
+        function add(n) {
+            n = n + 3;
+        };
+        
+        z = add(x);
+
+        console.log(x, y, z);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

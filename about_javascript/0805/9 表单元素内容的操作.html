@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 表单元素内容操作
+        // 获取：元素.value
+        // 设置：元素.value = 值
+        window.onload = function () {
+            var text = document.getElementById('text');
+            var btn = document.getElementById('btn');
+            // console.log(text, btn);
+
+            btn.onclick = function () {
+                var val = text.value; // 获取
+                console.log(val);
+
+                // text.value = '哥们，中午睡好了没'; // 设置
+
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text">
+    <button id="btn">按钮</button>
+</body>
+
+</html>

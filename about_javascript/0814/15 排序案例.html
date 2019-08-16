@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var arr = [
+            { "date": "2018-08-01", "DIU": 1209, "country": "US" },
+            { "date": "2018-08-02", "DIU": 680, "country": "GB" },
+            { "date": "2018-08-01", "DIU": 2311, "country": "CN" },
+            { "date": "2018-08-02", "DIU": 879, "country": "US" },
+            { "date": "2018-08-03", "DIU": 1525, "country": "CN" },
+            { "date": "2018-08-02", "DIU": 1525, "country": "CN" }
+        ];
+
+        // 按date进行降序排序，如果date一样，按DIU进行降序排序
+        arr.sort(function (a, b) {
+            var v1 = Date.parse(a.date); // 把date转成时间戳
+            var v2 = Date.parse(b.date);
+            if (v1 === v2) {
+                return b.DIU - a.DIU;
+            } else {
+                return v2 - v1;
+            }
+        });
+        console.log(arr);
+
+        // Date.parse: 将格式时间转换为具体的时间戳
+        // console.log(Date.parse('2018-08-01')); // 1533081600000
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

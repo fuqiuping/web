@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // for (var i = 0; i < 3; i++) {}
+
+        // 循环字符串
+        // var str = '我就是我，不一样的烟火'; // str[0]  str[1]
+        // for (var i = 0; i < str.length; i++) {
+        //     console.log(str[i]);
+        // }
+
+        // 循环数组
+        // var arr = ['刘备', '关羽', '张飞']; // arr[0]
+        // console.log(arr.length);
+
+        // for (var i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+        // }
+
+
+        // ------------------------------------------------------
+        // 对象本质是一组无序的名值对
+        // 对象没有长度，所以不能采用for循环，必须用for-in
+
+        // for(var 变量 in 对象){
+        //     变量就是名（key）
+        //     对象[变量]就是值(value)
+        // }
+
+        // 对象的格式
+        // var 对象名 = {
+        //     key: value,
+        //     key: value
+        // };
+
+        var obj = {
+            "name": '小张',
+            'age': 3,
+            sex: '男'
+        };
+
+        // console.log(obj.length); 
+
+        for (var attr in obj) {
+            // console.log(attr); // 名 key
+            console.log(obj[attr]); // 值 value
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

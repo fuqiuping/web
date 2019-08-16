@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var text1 = document.getElementById('text1');
+            var text2 = document.getElementById('text2');
+            var btn = document.getElementById('btn');
+            var box = document.getElementById('box');
+
+            // console.log(text1);
+            // 点击开始
+            btn.onclick = function () {
+                // 获取input的value值
+                var val1 = text1.value; // 属性名
+                var val2 = text2.value; // 属性值
+
+                // 给盒子设置样式
+                box.style[val1] = val2;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text1" placeholder="请输入属性名">
+    <input type="text" id="text2" placeholder="请输入属性值">
+    <button id="btn">按钮</button>
+    <div id="box">我是个盒子</div>
+</body>
+
+</html>

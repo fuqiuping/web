@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // window是js世界的老大，一切的属性或方法都是它下面的属性或方法
+
+        // 弹窗，前面的window通常省略
+
+        // alert只有确定按钮，返回值为undefined
+        // var n = window.alert('我就是我');
+        // console.log(n); // undefined
+
+        // 有确定和取消按钮，如果确定，返回true，如果取消返回false
+        // var n = window.confirm('我就是我');
+        // console.log(n);
+
+        // 有输入框的弹窗，如果确定，返回输入的内容，如果取消，返回null
+        // var n = window.prompt('我就是我', '80');
+        // console.log(n);
+
+        // ------------------------------
+        // console.log(window.parseInt('12.4'));
+        // console.log(window.parseFloat('12.4'));
+
+
+
+        // -----------------------------------------------
+        // 我们创建的全局变量或者全局方法，也是window下面的
+        // 工作中尽量少写全局变量
+        // var a = 10;
+        // console.log(a);
+        // console.log(window.a);
+
+        // function fn() {
+        //     console.log('我就是我');
+        // }
+
+        // fn();
+        // window.fn();
+
+
+        // ----------------------------
+        // var a = 10;
+        // function fn() {
+        //     var a = 20;
+        //     window.a = 30;
+        //     console.log(window.a);
+        // }
+        // fn();
+
+        // ---------------
+        // window它是一个对象 {} ，可以使用for-in循环
+        var n = 0;
+        for (var attr in window) {
+            console.log(++n, attr);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

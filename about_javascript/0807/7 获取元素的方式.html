@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{}
+        .abc{}
+        #dd{}
+        div p a{}
+        [title]{}
+    </style>
+    <script>
+        // 通过ID获取元素
+        // document.getElementById(ID);
+
+        // 通过标签获取元素
+        // 父级.getElementsByTagName(标签名);
+
+        // 通过class获取元素(IE8及以下不支持)
+        // 父级.getElementsByClassName(class名);
+
+        // 通过css选择器获取元素(IE7及以下不支持)
+        // 父级.querySelector(css选择器);  获取一个
+        // 父级.querySelectorAll(css选择器);   获取一堆
+
+
+        // 区别：
+        // 1、ID获取的只有一个，而通过标签名获取的是一堆（类数组）
+        // 2、ID获取的前面必须是document，而通过标签获取前面可以是document，也可以是某个父级
+        // 3、通过标签获取具有动态性
+
+        window.onload = function () {
+            // 获取整个文档的li
+            // var aLi = document.getElementsByTagName('li');
+            // console.log(aLi);
+
+            // 获取某个父级下面的
+            // var ul2 = document.getElementById('ul2');
+            // var aLi = ul2.getElementsByTagName('li');
+            // console.log(aLi);
+
+            // var abc = document.getElementsByClassName('abc');
+            // console.log(abc);
+            
+            // var ul2 = document.querySelector('#ul2');
+            // console.log(ul2);
+
+            // var aLi = document.querySelectorAll('#ul2 li');
+            // console.log(aLi);
+
+            var aLi = document.querySelectorAll('#ul2 .abc');
+            console.log(aLi);
+
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li class="abc">333</li>
+        <li>444</li>
+    </ul>
+    <ul id="ul2">
+        <li>111</li>
+        <li class="abc">222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+</body>
+
+</html>

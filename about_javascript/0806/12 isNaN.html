@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // isNaN(参数)
+        // 是不是不是一个数字（判断不是一个数字）
+        // 不是数字，返回真，是数字，返回假(isNaN有个好朋友Number()，它把接收到的参数传给Number，如果Number能转成功，则返回false，如果转不成功，则返回true)
+
+        console.log(isNaN(undefined)); // true
+        console.log(isNaN(null)); // false
+
+        console.log(isNaN('10')); // false
+        console.log(isNaN('10px')); // true
+        console.log(isNaN(true)); // false
+        console.log(isNaN(false)); // false
+
+
+        console.log(isNaN(10)); // false
+        console.log(isNaN(NaN)); // true
+
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

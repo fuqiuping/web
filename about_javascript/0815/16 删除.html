@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 父元素.removeChild( 要移除的节点 )
+        // 会返回被删除的元素，方便我们下次使用
+
+        // 点击元素，删除它
+        window.onload = function () {
+            var box = document.getElementsByClassName('box')[0];
+            box.onclick = function () {
+                // 点击的时候删除这个元素
+                var n = this.parentNode.removeChild(this);
+
+                // 两秒钟以后，双让这个元素添加到页面中
+                setTimeout(function () {
+                    document.body.appendChild(n);
+                }, 2000);
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">div</div>
+</body>
+
+</html>

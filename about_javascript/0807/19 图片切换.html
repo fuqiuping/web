@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+        }
+
+        p {
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var img = document.querySelector('img');
+            var p = document.querySelector('p');
+            var btn = document.querySelectorAll('button');
+            var n = 1;
+
+            // 上一张
+            btn[0].onclick = function () {
+                n--;
+                if (n < 1) {
+                    n = 4;
+                }
+                img.src = 'img/' + n + '.jpg';
+                p.innerText = '美女图' + n;
+            }
+
+            // 下一张
+            btn[1].onclick = function () {
+                n++;
+                if (n > 4) {
+                    n = 1;
+                }
+                img.src = 'img/' + n + '.jpg';
+                p.innerText = '美女图' + n;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <img src="img/1.jpg" alt="">
+    <p>美女图1</p>
+    <button>上一张</button>
+    <button>下一张</button>
+</body>
+
+</html>

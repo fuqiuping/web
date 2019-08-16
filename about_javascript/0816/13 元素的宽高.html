@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                return window.getComputedStyle(obj)[attr];
+            } else {
+                return obj.currentStyle[attr];
+            }
+        }
+
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+
+            console.log(getStyle(box, 'width')); // 100px
+            console.log(box.style.width); // 只能获取行间
+            console.log(box.clientWidth); // 120   width + padding
+            console.log(box.offsetWidth); // 122   width + padding + border
+            console.log(box.scrollWidth); // 120   获取元素实际内容宽
+
+            // 高也一样，同宽
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

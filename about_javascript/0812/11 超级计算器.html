@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        * {
+            outline: none;
+        }
+
+        input[type='text'] {
+            width: 300px;
+            text-align: right;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+
+<body>
+    <table align="center" width="300px" border="0" cellspacing="1" cellpadding="0">
+        <caption>超级计算器</caption>
+        <tr>
+            <td colspan="3">
+                <input id="result" type='text' readonly placeholder="0.0">
+            </td>
+        </tr>
+        <tr>
+            <td><button class="num">1</button></td>
+            <td><button class="num">2</button></td>
+            <td><button class="num">3</button></td>
+        </tr>
+        <tr>
+            <td><button class="num">4</button></td>
+            <td><button class="num">5</button></td>
+            <td><button class="num">6</button></td>
+        </tr>
+        <tr>
+            <td><button class="num">7</button></td>
+            <td><button class="num">8</button></td>
+            <td><button class="num">9</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button style="width: 202px" class="num">0</button></td>
+            <td><button class="num">.</button></td>
+        </tr>
+        <tr>
+            <td><button class="action">+</button></td>
+            <td><button class="action">-</button></td>
+            <td><button class="action">*</button></td>
+        </tr>
+        <tr>
+            <td><button class="action">/</button></td>
+            <td><button class="action">%</button></td>
+            <td rowspan="2"><button style="height: 44px" class="handle">=</button></td>
+        </tr>
+        <tr>
+            <td><button class="handle">&lt;--</button></td>
+            <td><button class="handle">C</button></td>
+        </tr>
+    </table>
+
+    <script>
+        var result = document.getElementById('result'); // 显示框
+        var num = document.getElementsByClassName('num'); // 输入操作数的
+        var action = document.getElementsByClassName('action'); // 输入操作符的
+        var handle = document.getElementsByClassName('handle'); // 得到结果的
+
+        var left = ''; // 第一个操作数
+        var right = ''; // 第二个操作数
+        var cz = ''; // 操作符
+        var str = ''; // 全部的
+
+        // 点击输入数字
+        for (var i = 0; i < num.length; i++) {
+            num[i].onclick = function () {
+                if (cz === '') {
+                    left += this.innerHTML;
+                } else {
+                    right += this.innerHTML;
+                }
+
+                str = left + cz + right;
+                result.value = str;
+            }
+        }
+
+        // 点击操作符
+        for (var i = 0; i < action.length; i++) {
+            action[i].onclick = function () {
+                cz = this.innerHTML;
+
+                str = left + cz + right;
+                result.value = str;
+            }
+        }
+
+        // 求结果按钮
+        for (var i = 0; i < handle.length; i++) {
+            handle[i].onclick = function () {
+                // console.log(this.innerHTML);
+                switch (this.innerHTML) {
+                    case '=':
+                        // 求结果
+                        switch (cz) {
+                            case '+':
+                                result.value = Number(left) + Number(right);
+                                break;
+                            case '-':
+                                result.value = Number(left) - Number(right);
+                                break;
+                            case '*':
+                                result.value = Number(left) * Number(right);
+                                break;
+                            case '/':
+                                result.value = Number(left) / Number(right);
+                                break;
+                            case '%':
+                                result.value = Number(left) % Number(right);
+                                break;
+                        }
+                        left = '';
+                        right = '';
+                        cz = '';
+                        str = '';
+                        break;
+                    case 'C':
+                        // 清空
+                        left = '';
+                        right = '';
+                        cz = '';
+                        str = '';
+                        result.value = '';
+                        break;
+                    case '&lt;--':
+                        // 删除一个
+                        if (cz === '') {
+                            left = left.substr(0, left.length - 1);
+                        } else if (cz !== '' && right === '') {
+                            cz = '';
+                        } else if (right !== '') {
+                            right = right.substr(0, right.length - 1);
+                        }
+                        str = left + cz + right;
+                        result.value = str;
+                        break;
+                }
+            }
+        }
+
+        // -----------------------------------------------
+
+        // eval会把参数解析成js代码
+        var v = eval('3+5');
+        console.log(v);
+
+    </script>
+</body>
+
+</html>

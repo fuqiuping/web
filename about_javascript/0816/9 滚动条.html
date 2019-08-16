@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 元素.scrollTop
+        // 元素.scrollLeft
+
+        // 滚动事件：onscroll
+
+        // 谷歌认为滚动条是body(老版本)
+        // 其它浏览器认为是html的
+
+        // console.log(document.documentElement); // html
+        // console.log(document.body); // body
+        // console.log(document.title); // title标签
+
+
+        window.onload = function () {
+
+            // console.log(document.documentElement.scrollTop); // 其它浏览器
+            // console.log(document.body.scrollTop); // 谷歌
+
+            // 在窗口上滚动触发
+            window.onscroll = function () {
+                var top = document.documentElement.scrollTop || document.body.scrollTop;
+                console.log(top);
+            }
+
+            // 设置滚动条
+            document.onclick = function () {
+                document.documentElement.scrollTop = 500;
+                document.body.scrollTop = 500;
+            }
+
+        }
+    </script>
+</head>
+
+<body style="height: 3000px;">
+
+</body>
+
+</html>

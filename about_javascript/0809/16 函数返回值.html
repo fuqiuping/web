@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 函数的返回值
+        // return  函数执行了，返回一个结果，就是return后面的值
+        // 函数调用的结果，就是return后面的值
+
+        // 特点：
+        // 如果函数没有手动return，返回值为undefined
+        // return后面所有的代码都不再执行
+        // return可以返回任意类型的数据
+
+
+        function fn(n) {
+            var num = 0;
+            for (var i = 1; i <= n; i++) {
+                num += i;
+            }
+            // console.log(num);
+            return num;
+        };
+
+        // 求1--100的和 与 1--50的和的  积
+        var v1 = fn(100);
+        var v2 = fn(50);
+
+        console.log(v1*v2);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

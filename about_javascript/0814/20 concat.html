@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组.concat(参数);  返回一个新数组
+
+        var arr1 = [1, 2, 3];
+        var arr2 = [4, 5, 6];
+
+        // var n = arr1.concat(arr2, '小华子');
+
+        // console.log(arr1, arr2); // 不改变原数组
+        // console.log(n); // 新数组
+
+        var n = arr1.concat(); // 克隆
+        console.log(n);
+        console.log(n == arr1);
+
+
+        // ---------------------
+        // 推荐使用方法
+        // var n = [].concat(arr1, arr2, '张三');
+        // console.log(n);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

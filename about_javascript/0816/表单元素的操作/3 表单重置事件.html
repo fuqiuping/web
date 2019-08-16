@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 重置事件
+        // 表单.onreset = function(){}
+        // 可以在我们重置表单之前，对用户进行提示
+
+        window.onload = function () {
+            var form = document.getElementById('form1');
+            var userName = form.userName;
+            var pass = form.pass;
+
+            form.onreset = function () {
+                // var n = confirm('哥们，真的重置吗？');
+                // if (n) {
+                //     return true;
+                // } else {
+                //     return false;
+                // }
+
+                // ------------
+                return confirm('哥们，真的重置吗？');
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="get" id="form1">
+        <input type="text" name="userName">
+        <input type="password" name="pass">
+
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </form>
+</body>
+
+</html>

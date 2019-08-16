@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var aLi = document.getElementsByTagName('li');
+
+
+            // var onOff = true;
+            // for (var i = 0; i < aLi.length; i++) {
+            //     aLi[i].onclick = function () {
+            //         if (onOff) {
+            //             this.style.backgroundColor = 'red';
+            //             onOff = false;
+            //         } else {
+            //             this.style.backgroundColor = '';
+            //             onOff = true;
+            //         }
+            //     }
+            // }
+
+            // 一个开关控制一个元素
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].onOff = true; // 给每一个li添加一个自定义的开关
+
+                aLi[i].onclick = function () {
+                    if (this.onOff) {
+                        this.style.backgroundColor = 'red';
+                    } else {
+                        this.style.backgroundColor = '';
+                    }
+                    this.onOff = !this.onOff;
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 点击li，添加红色，再点，取消红色 -->
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+    </ul>
+</body>
+
+</html>

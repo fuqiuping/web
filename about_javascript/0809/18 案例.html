@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            /* width: 100px !important; */
+            height: 120px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 封装一个方法，获取元素的样式
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+
+            // box.style.width = '200px';
+            // console.log(box.style.width); // 只能获取行间的
+
+            // --------------
+            // IE8及以下不支持
+            // window.getComputedStyle(元素).样式名
+            // console.log(window.getComputedStyle(box).width);
+
+            // IE8及以下支持
+            // 元素.currentStyle.样式名
+            // console.log(box.currentStyle.width);
+
+            console.log(getStyle(box, 'width'));
+            console.log(getStyle(box, 'height'));
+            console.log(getStyle(box, 'background-color'));
+
+
+            // 获取元素样式的封装，参数：元素 样式名
+            // 只能获取元素显示定义的样式
+            function getStyle(obj, attr) {
+                // console.log(window.getComputedStyle); // 能力检测
+                if (window.getComputedStyle) {
+                    // IE9及以上
+                    return window.getComputedStyle(obj)[attr];
+                } else {
+                    // IE8及以下
+                    return obj.currentStyle[attr];
+                }
+            }
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function toTwo(n) {
+            if (n < 10) {
+                return '0' + n;
+            } else {
+                return '' + n;
+            }
+        }
+
+        // console.log(toTwo(4));
+        // console.log(toTwo(14));
+
+
+
+        window.onload = function () {
+            var h1 = document.getElementsByTagName('h1')[0];
+            var str = '日一二三四五六';
+
+            fn(); // 一打开就执行一次，免得出现空白
+            setInterval(fn, 1000);
+
+            function fn() {
+            var d = new Date(); // 当前的时间
+            var year = d.getFullYear(); // 年
+            var month = d.getMonth() + 1; // 月
+            var date = d.getDate(); // 日
+
+            var week = d.getDay(); // 星期 0-6
+
+            var h = d.getHours(); // 时
+            var m = d.getMinutes(); // 分
+            var s = d.getSeconds(); // 秒
+
+                h1.innerHTML = '当前时间是：' + year + '年' + month + '月' + date + '日 星期' + str[week] + ' ' + toTwo(h) + ':' + toTwo(m) + ':' + toTwo(s);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <h1>当前时间是：2019年10月10日 星期三 10:10:10</h1> -->
+    <h1></h1>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 返回布尔值
+        // &&   与
+        // 两边都为真，则结果为真
+        // 短路操作符，左边能决定的，就不用跑到右边
+        // 如果是表达式，则把表达式的结果返回出来，如果是一个值，则把值返回出来
+        // console.log(7 > 5 && 10 >= 10); // true
+        // console.log(7 > 5 && 10 <= 10); // true
+        // console.log(7 < 5 && 10 <= 10); // false
+
+        // console.log(7 > 5 && 10); // 10
+        // console.log(7 > 5 && 10 < 3); // false
+        // console.log(0 && 3); // 0
+        // console.log(1 && 3); // 3
+        // console.log(2 && 2); // 3
+
+
+        // -----------------------------------
+        // ||   或
+        // 只要有一边为真，结果就为真
+        // 短路操作符，只要左边能决定，就不用跑到右边
+        // console.log(5 > 3 || 5 < 3); // true
+        // console.log(5 > 10 || 5 < 3); // false
+
+        // console.log(5 || 3); // 5
+        // console.log(5 > 3 || 3); // true
+        // console.log('' || 3); // 3
+        // console.log('' || 3 < 5); // true
+        
+        // --------------------------------
+        // !    非
+        // 取反
+        var a = 3;
+        console.log(!a); // false
+        console.log(!''); // true
+        console.log(!!!!!!!!!!''); // false
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

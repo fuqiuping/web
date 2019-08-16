@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // number
+
+        var a = 10;
+        console.log(a);
+        console.log(typeof (a));
+
+        var b = -0.2;
+        console.log(typeof b);
+
+        var c = 070; // 八进制
+        console.log(typeof c);
+
+        var d = 'a' * 3; // 本意想得到一个数字，但是实在没办法给你一个数字，返回一个NaN
+        console.log(d); // NaN   (not a number)
+        console.log(typeof d); // number(类型还是数字类型)
+
+        var e = 1 / 0;
+        console.log(e); // 无穷大
+        console.log(typeof e); // number
+
+        console.log(0.1 + 0.2); // 0.3   0.30000000000000004
+        // 这是使用基于IEEE754 数值的浮点计算的通病，ECMAScript 并非独此一家；其他使用相同数值格式的语言也存在这个问题。
+
+        // if(0.1 + 0.2 == 0.3){}
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

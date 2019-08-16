@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var message = document.getElementById('message');
+            var n = 16;
+
+            // 加
+            btn1.onclick = function () {
+                n = n + 2;
+                message.style.fontSize = n + 'px';
+            }
+
+            // 减
+            btn2.onclick = function () {
+                n = n - 2;
+                message.style.fontSize = n + 'px';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">字号加</button>
+    <button id="btn2">字号减</button>
+    <p id="message">
+        据美联社报道，当地时间8月4日凌晨，美国俄亥俄州代顿市发生一起枪击事件，造成包括嫌犯妹妹在内的至少9人死亡，至少27人受伤，持枪嫌犯被警方击毙。目前警方仍不知道24岁的枪手康纳·贝茨的犯罪动机，但他的几名高中同学透露，他在高中时曾因编制“暗杀名单”和“强奸名单”而被停学。
+    </p>
+</body>
+
+</html>

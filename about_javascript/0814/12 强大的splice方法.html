@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组.splice(起始位置, 要删除的个数, 要添加的元素);
+        // 返回被删除的元素组成的数组
+
+        var arr = ['刘备', '关羽', '张飞'];
+
+        // 添加
+        // var n = arr.splice(2, 0, '关平', '关兴');
+        // console.log(arr);
+        // console.log(n); // []
+
+        // 删除
+        // var n = arr.splice(1, 1);
+        // console.log(arr);
+        // console.log(n);
+
+        // 替换
+        var n = arr.splice(1, 1, '关平', '关兴');
+        console.log(arr);
+        console.log(n);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

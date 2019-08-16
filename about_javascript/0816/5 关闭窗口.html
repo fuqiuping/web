@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 只能关闭由open打开的窗口
+        // 新窗口.close();
+        window.onload = function () {
+            var btn = document.getElementsByTagName('button');
+            var w = null; // 打开窗口的引用
+
+            btn[0].onclick = function () {
+                w = open('https://www.baidu.com/', '_blank', 'width=500px, height=300px');
+                // console.log(w);
+            }
+
+            btn[1].onclick = function(){
+                w.close(); // 关闭
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>打开</button>
+    <button>关闭</button>
+</body>
+
+</html>

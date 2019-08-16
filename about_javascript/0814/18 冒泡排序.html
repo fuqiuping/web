@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 冒泡排序
+        // 从第一项起，比较相邻的两个元素，如果前一个比后一个大，则交换位置。第一轮的时候最后一个元素应该是最大的一个。每一轮最后一个元素已经是最大的了，所以最后一个元素下一轮不用比较。
+        var arr = [6, 5, 43, 32, 12];
+        for (var i = 1; i < arr.length; i++) {
+            for (j = 0; j < arr.length - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+        // 5, 6, 32, 12, 43
+        // 5, 6, 12, 32, 43
+        // 5, 6, 12, 32, 43
+        // 5, 6, 12, 32, 43
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

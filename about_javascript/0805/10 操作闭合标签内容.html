@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // innerHTML识别标签
+        // 获取：元素.innerHTML
+        // 设置：元素.innerHTML = 值;
+
+        // innerText不识别标签
+        // 获取：元素.innerText
+        // 设置：元素.innerText = 值;
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var btn = document.getElementById('btn');
+            // console.log(box, btn);
+
+            // 按钮点击的时候，执行一个事
+            btn.onclick = function () {
+                // console.log(box.innerHTML);
+
+                // box.innerHTML = '别睡觉，睡了举个手'; // 替换了之前的内容
+                // box.innerHTML += '<b>别睡觉，睡了举个手</b>'; // 先得到box的内容，再和后面的内容连起来，赋给box
+
+                // ----------------------------
+                // console.log(box.innerText);
+                box.innerText = '别睡觉，睡了举个手';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="box">东风吹，<span>战鼓擂</span></div>
+    <button id="btn">按钮</button>
+</body>
+
+</html>

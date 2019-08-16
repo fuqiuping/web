@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 节点.nodeValue
+        // nodeValue认为只有文本才有内容
+        window.onload = function () {
+            var p = document.querySelector('p');
+            console.log(p.nodeValue); // null
+            console.log(p.childNodes[0].nodeValue); // 11111111
+
+            // 推荐
+            console.log(p.innerHTML);
+            console.log(p.innerText);
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>11111111</p>
+</body>
+
+</html>

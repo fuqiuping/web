@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mark {
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .box {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 10;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .title {
+            height: 30px;
+            line-height: 30px;
+            background: #ccc;
+        }
+
+        .title h3 {
+            float: left;
+            font-weight: normal;
+        }
+
+        .title span {
+            float: right;
+            width: 30px;
+            background: red;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName('button')[0]; // 按钮
+            // 可视区宽高
+            var clientW = document.documentElement.clientWidth;
+            var clientH = document.documentElement.clientHeight;
+            var body = document.body;
+
+            var title = '扛把子';
+            var message = '哪是小猴子';
+
+            btn.onclick = function () {
+                // 创建
+                var mark = document.createElement('div');
+                mark.className = 'mark';
+                mark.style.width = clientW + 'px';
+                mark.style.height = clientH + 'px';
+                body.appendChild(mark);
+
+                // 创建盒子
+                var box = document.createElement('div');
+                box.className = 'box';
+                box.innerHTML = `<div class="title">
+                        <h3>${title}</h3>
+                        <span>x</span>
+                    </div>
+                    <div class="content">
+                        <p>${message}</p>
+                    </div>`;
+                box.style.left = (clientW - 302) / 2 + 'px';
+                box.style.top = (clientH - 202) / 2 + 'px';
+                body.appendChild(box);
+
+                // 关闭
+                var close = box.getElementsByTagName('span')[0];
+                // console.log(close);
+                close.onclick = function () {
+                    body.removeChild(mark);
+                    body.removeChild(box);
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>按钮</button>
+
+    <!-- <div class="mark"></div>
+    <div class="box">
+        <div class="title">
+            <h3>你是谁？</h3>
+            <span>x</span>
+        </div>
+        <div class="content">
+            <p>我是小华子</p>
+        </div>
+    </div> -->
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组.slice(起始下标, 结束下标);
+        // 1、没有参数，返回全部
+        // 2、从第一个参数处开始，到结束
+        // 3、有两个参数，从参数处开始，到第二个参数处止，不包括第二个参数
+        // 4、负值跟长度相加
+        // 5、第一个比第二个大，返回空数组
+
+        var arr = [3, 47, 5, 2, 8, 8];
+
+        console.log(arr.slice()); // [ 3, 47, 5, 2, 8, 8 ]  克隆
+        console.log(arr.slice(2)); // [ 5, 2, 8, 8 ]
+        console.log(arr.slice(2, 5)); // [ 5, 2, 8 ]
+        console.log(arr.slice(2, -1)); // [ 5, 2, 8 ]
+        console.log(arr.slice(5, 2)); // []
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

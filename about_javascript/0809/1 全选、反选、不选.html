@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>全选</button>
+    <button>反选</button>
+    <button>不选</button>
+    <hr>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <script>
+        var aBtn = document.getElementsByTagName('button');
+        var aInput = document.getElementsByTagName('input');
+        // console.log(aBtn, aInput);
+
+        // 全选
+        aBtn[0].onclick = function () {
+            for (var i = 0; i < aInput.length; i++) {
+                aInput[i].checked = true;
+            }
+        }
+
+        // 反选
+        aBtn[1].onclick = function () {
+            for (var i = 0; i < aInput.length; i++) {
+                // if (aInput[i].checked) {
+                //     aInput[i].checked = false;
+                // } else {
+                //     aInput[i].checked = true;
+                // }
+
+                aInput[i].checked = !aInput[i].checked;
+            }
+        }
+
+        // 不选
+        aBtn[2].onclick = function () {
+            for (var i = 0; i < aInput.length; i++) {
+                aInput[i].checked = false;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

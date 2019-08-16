@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>-</button>
+    <span>0</span>
+    <button>+</button>
+    单价：<span>12.5元</span>
+    总价：<span>0元</span>
+    <script>
+        var aBtn = document.getElementsByTagName('button');
+        var aSpan = document.getElementsByTagName('span');
+
+        var len = parseInt(aSpan[0].innerText); // 件数
+        var danja = parseFloat(aSpan[1].innerText); // 单价
+
+        // 加
+        aBtn[0].onclick = function () {
+            len--; // 件数减
+            if (len < 0) {
+                len = 0;
+            }
+            aSpan[0].innerText = len;
+            aSpan[2].innerText = len * danja + '元';
+        }
+
+        // 加
+        aBtn[1].onclick = function () {
+            len++; // 件数加
+            aSpan[0].innerText = len;
+            aSpan[2].innerText = len * danja + '元';
+        }
+    </script>
+</body>
+
+</html>

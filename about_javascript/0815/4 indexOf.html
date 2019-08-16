@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 封装数组方法indexOf，实现兼容低版本浏览器
+
+        // arr.indexOf(item, 起始位置);  
+
+        var arr = [5, 3, 5, 7, 4, 3, 3, 3, 5];
+        console.log(indexOf(arr, 3));
+        console.log(indexOf(arr, 3, 2));
+        console.log(indexOf(arr, '3'));
+
+
+        // 参数：数组 查找的项 起始位置
+        function indexOf(arr, item, index) {
+            // 如果index没有传，则我们给index赋值为0
+            index = typeof (index) === 'undefined' ? 0 : index;
+            // 循环的起始值是index
+            for (var i = index; i < arr.length; i++) {
+                if (arr[i] === item) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

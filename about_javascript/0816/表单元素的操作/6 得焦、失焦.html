@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var input = document.getElementsByTagName('input')[0];
+
+            // 得焦
+            input.onfocus = function () {
+                this.style.background = 'red';
+            }
+            input.focus();
+
+            // 失焦
+            input.onblur = function () {
+                this.style.background = 'blue';
+            }
+            setTimeout(function () {
+                input.blur();
+            }, 3000);
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text">
+</body>
+
+</html>

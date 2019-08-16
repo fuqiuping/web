@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 元素.firstChild       在标准浏览器下，有可能返回的是一个文本节点，在IE8及以下，返回的是一个元素节点
+        // 元素.firstElementChild   在标谁浏览器下，返回第一个子元素，在IE8及以下，没有
+
+        // 元素.lastChild
+        // 元素.lastElementChild
+
+        // 元素.nextSibling
+        // 元素.nextElementSibling
+
+        // 元素.previousSibling
+        // 元素.previousElementSibling
+
+        window.onload = function () {
+            var ul = document.getElementsByTagName('ul')[0];
+
+            // 第一个
+            // var first = ul.firstChild;
+            // var first = ul.firstElementChild;
+            var first = ul.firstElementChild || ul.firstChild;
+            first.style.background = 'red';
+
+            // 最后一个
+            var last = ul.lastElementChild || ul.lastChild;
+            last.style.background = 'green';
+
+            // 下一个
+            var next = first.nextElementSibling || first.nextSibling;
+            next.style.background = 'yellow';
+
+            // 上一个
+            var prev = last.previousElementSibling || last.previousSibling;
+            prev.style.background = 'pink';
+
+
+            // --------------------
+            // 推荐：找第一个元素和最后一个元素
+            var li = ul.children;
+            console.log(li[0]);
+            console.log(li[li.length - 1]);
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+    </ul>
+</body>
+
+</html>

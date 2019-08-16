@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <button>-</button>
+            <span class="n1">0</span>
+            <button>+</button>
+            单价：<span>12.5元</span>
+            总价：<span class="n2">0元</span>
+        </li>
+        <li>
+            <button>-</button>
+            <span class="n1">0</span>
+            <button>+</button>
+            单价：<span>8.5元</span>
+            总价：<span class="n2">0元</span>
+        </li>
+        <li>
+            <button>-</button>
+            <span class="n1">0</span>
+            <button>+</button>
+            单价：<span>18元</span>
+            总价：<span class="n2">0元</span>
+        </li>
+        <li>
+            <button>-</button>
+            <span class="n1">0</span>
+            <button>+</button>
+            单价：<span>2.5元</span>
+            总价：<span class="n2">0元</span>
+        </li>
+        <li>
+            <button>-</button>
+            <span class="n1">0</span>
+            <button>+</button>
+            单价：<span>22.5元</span>
+            总价：<span class="n2">0元</span>
+        </li>
+    </ul>
+    <p>
+        总件数：<span id="jianAll">0</span>件，总价格：<span id="jiageAll">0</span>元
+    </p>
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var n1s = document.getElementsByClassName('n1'); // 件数
+        var n2s = document.getElementsByClassName('n2'); // 总价
+        var jianAll = document.getElementById('jianAll');
+        var jiageAll = document.getElementById('jiageAll');
+
+        // change(aLi[0]);
+        // change(aLi[1]);
+        // change(aLi[2]);
+        // change(aLi[3]);
+
+        for (var i = 0; i < aLi.length; i++) {
+            change(aLi[i]);
+        };
+
+        function change(obj) {
+            var aBtn = obj.getElementsByTagName('button');
+            var aSpan = obj.getElementsByTagName('span');
+            var num = aSpan[0].innerText - 0; // 件数
+            var danjia = parseFloat(aSpan[1].innerText); // 单价
+
+            // 减
+            aBtn[0].onclick = function () {
+                num--;
+                if (num < 0) {
+                    num = 0;
+                }
+                fn();
+            }
+
+            // 加
+            aBtn[1].onclick = function () {
+                num++;
+                fn();
+            }
+
+            function fn() {
+                aSpan[0].innerText = num;
+                aSpan[2].innerText = num * danjia + '元';
+
+                // 总价计算
+                var a1 = 0; // 件数
+                var a2 = 0; // 总价
+                for (var i = 0; i < n1s.length; i++) {
+                    a1 += n1s[i].innerText - 0;
+                    a2 += parseFloat(n2s[i].innerText);
+                    jianAll.innerText = a1;
+                    jiageAll.innerText = a2;
+                }
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>

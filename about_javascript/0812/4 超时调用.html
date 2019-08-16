@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // 设置定时器
+            var timer = setTimeout(function () {
+                console.log('我执行了');
+            }, 3000);
+
+
+            var btn = document.querySelector('button');
+            btn.onclick = function () {
+                // 清除定时器
+                clearTimeout(timer);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>清除定时器</button>
+</body>
+
+</html>

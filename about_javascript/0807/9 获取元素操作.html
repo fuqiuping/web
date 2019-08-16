@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById('box'); // 一个
+            var aLi = document.getElementsByTagName('li'); // 一堆
+
+            console.log(box);
+            console.log(aLi);
+
+            box.style.backgroundColor = 'red';
+            
+            // aLi.style.backgroundColor = 'yellow';
+            // console.log(aLi[0]);
+
+
+            aLi[0].style.backgroundColor = 'yellow';
+            aLi[1].style.backgroundColor = 'yellow';
+            aLi[2].style.backgroundColor = 'yellow';
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="box">div</div>
+
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+</body>
+</html>

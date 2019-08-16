@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // console.log(Math.floor(3.999)); // 3   向下取整 去掉小数部分
+        // console.log(Math.ceil(3.001)); // 4    向上取整 只要有小数就进位
+        // console.log(Math.floor(-0.999)); // -1
+        // console.log(Math.ceil(-0.999)); // -0
+
+        // console.log(Math.round(3.14159)); // 3   四舍五入
+
+        // console.log(Math.abs(-100)); // 100   绝对值
+        // console.log(Math.max(1, 2, 36, 9)); // 36   最大值
+        // console.log(Math.min(1, 2, 36, 9)); // 1    最小值
+        // console.log(Math.pow(2, 10)); // 2的10次方 1024
+        // console.log(Math.pow(3, 2)); // 3的平方 9
+        // console.log(Math.sqrt(60)); // 开方 
+
+
+        // ------------------------
+        // 随机数: 返回大于等于0小于1的随机数
+        // for (var i = 0; i < 10; i++) {
+        //     console.log(Math.random());
+        // }
+
+        // 推理过程
+        // 2--6  '2 3 4 5 6'      5 * Math.random()     0+2  4.999999+2    2   6.9999999    2   6
+        // 3--8  '3 4 5 6 7 8'    6 * Math.random()     0+3  5.999999+3    3   8.9999999    3   8
+
+        // for (var i = 0; i < 20; i++) {
+        //     console.log(Math.floor(Math.random() * (6 - 2 + 1) + 2));
+        // }
+
+
+        // --------------------------
+        // 1、大 - 小 + 1
+        // 2、乘以随机数
+        // 3、加上最小数
+        // 4、向下取整
+
+        // 随机数公式
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        for (var i = 0; i < 10; i++) {
+            console.log(getRandom(1, 10));
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 获取元素的子节点
+        // 元素.children     返回的是元素类型的子节点（推荐使用）
+        // 元素.childNodes   在标准浏览器下，除了元素节点，还包括文本节点，IE8及以下，只返回元素类型的子节点
+
+        window.onload = function () {
+            var ul = document.getElementById('ul1');
+
+            // var li = ul.children;
+            // console.log(li);
+
+            var li = ul.childNodes;
+            console.log(li);
+        }
+    </script>
+</head>
+
+<body>
+    <p>11111111</p>
+    <ul id="ul1">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+    </ul>
+</body>
+
+</html>

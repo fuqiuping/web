@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 比较运算符，返回布尔值
+        // >  >=  
+        // <  <= 
+
+        // console.log(5 > 3); // true
+        // console.log(5 > '3'); // true
+
+        // console.log('12' > '2'); // false 一位一位的比较
+
+        // -----------------------------------------
+        // ==  !=  
+        // 两个等号是判断值是否相等，一个等号是赋值
+        // 值是否相等，把两边的转为数字(为了进行相等判断，会发生隐式类型转换)
+        // null和undefined不能转换
+        // console.log('10' == 10); // true
+        // console.log(false == 0); // true
+        // console.log(false == null); // false
+        // console.log(undefined == null); // true
+
+        // console.log(undefined != null); // false
+        // console.log('10' != 10); // false
+
+        // 对象比较的是地址，只有地址一样，才会相等
+        // console.log([] == []); // false
+        // console.log({} == {}); // false
+        
+
+
+        // -----------------------
+        // ===  !==
+        // 值和类型都相等(不会发生类型转换，推荐使用)
+        console.log('10' === 10); // false
+        console.log(undefined === null); // false
+
+        console.log(undefined !== null); // true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

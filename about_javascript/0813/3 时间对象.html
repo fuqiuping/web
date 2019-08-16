@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 时间：new Date();   {}
+        // 它下面有很多的属性和方法，从它下面可以获取年月日 时分秒 星期
+
+        // var d = new Date();
+        // console.log(d); // Date Tue Aug 13 2019 09:45:13 GMT+0800 (中国标准时间)
+
+        // ---------------------------
+        // 多种时间表现形式
+        // console.log(d.toLocaleString()); // 2019/8/13 上午9:46:10
+        // console.log(d.toLocaleDateString()); // 2019/8/13
+        // console.log(d.toLocaleTimeString()); // 上午9:47:15
+
+        // console.log(d.toString()); // Tue Aug 13 2019 09:47:48 GMT+0800 (中国标准时间)
+        // console.log(d.toDateString()); // Tue Aug 13 2019
+        // console.log(d.toTimeString()); // 09:47:48 GMT+0800 (中国标准时间)
+
+
+
+        // -------------------------------------
+        // 从时间对象里面获取年月日 时分秒 星期
+        var d = new Date(); // 获取的是计算机当前的时间
+        var year = d.getFullYear(); // 年
+        var month = d.getMonth() + 1; // 月  0--11 代表 1--12
+        var date = d.getDate(); // 日 
+
+        var week = d.getDay(); // 星期  0--6 代表 周日--周六
+
+        var h = d.getHours(); // 时
+        var m = d.getMinutes(); // 分
+        var s = d.getSeconds(); // 秒
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

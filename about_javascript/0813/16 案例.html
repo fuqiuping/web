@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 截取字符串“abcdefg”中的def
+
+        // var str = 'abcdefg';
+        // var val = 'def';
+
+        // var n = str.indexOf(val); // 先看一下，有没有要找的这个字符串
+        // if (n !== -1) {
+        //     console.log(str.slice(n, n + val.length));
+        // }
+
+
+        // console.log(fn(str, val));
+
+        // function fn(str, val) {
+        //     var n = str.indexOf(val);
+        //     if (n !== -1) {
+        //         return str.slice(n, n + val.length);
+        //     }
+        // }
+
+        // ------------------------------------------------------------------
+
+        // 把下面的字符串去重，并去除掉特殊字符按照数字在前字母在后的顺序排序字符串 
+        // 12345fdsarg
+        var str = '1233fddfd&3434fdsaff&454545&4545444rfdsfds&545gdsgs';
+
+        // 去重
+        // 去掉特殊字符
+        // 数字在前，字母在后
+
+        var num = ''; // 数字
+        var s = ''; // 字母
+        // for (var i = 0; i < str.length; i++) {
+        //     if ((str[i].charCodeAt(0) >= 48 && str[i].charCodeAt(0) <= 57) && num.indexOf(str[i]) === -1) {
+        //         num += str[i];
+        //     } else if ((str[i].charCodeAt(0) >= 97 && str[i].charCodeAt(0) <= 122) && s.indexOf(str[i]) === -1) {
+        //         s += str[i];
+        //     }
+        // }
+
+        for (var i = 0; i < str.length; i++) {
+            var v = str[i];
+            if ((v.charCodeAt(0) >= 48 && v.charCodeAt(0) <= 57) && num.indexOf(v) === -1) {
+                num += v;
+            }
+            if ((v.charCodeAt(0) >= 97 && v.charCodeAt(0) <= 122) && s.indexOf(v) === -1) {
+                s += v;
+            }
+        }
+
+        console.log(num + s);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

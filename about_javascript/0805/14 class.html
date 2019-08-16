@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bg {
+            background: yellow;
+        }
+
+        .abc {
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+    <script>
+        // 获取：元素.className
+        // 设置：元素.className = 值
+        window.onload = function () {
+            var box = document.getElementById('box');
+            box.onclick = function () {
+                // box.className = 'abc';
+                box.className += ' abc';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box" class="bg">我就是我</div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background: #ccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        span.active {
+            background: yellow;
+        }
+
+        #box div {
+            width: 300px;
+            height: 150px;
+            border: 1px solid #ccc;
+            line-height: 150px;
+            text-align: center;
+            font-size: 40px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var aSpan = box.getElementsByTagName('span');
+            var aDiv = box.getElementsByTagName('div');
+            var count = 0; // 记录下标
+            var timer = null; // 定时器
+
+            // 一打开就执行
+            timer = setInterval(auto, 2000);
+
+            // 滑上停止
+            box.onmouseover = function () {
+                clearInterval(timer);
+            }
+
+            // 滑离开启
+            box.onmouseout = function () {
+                timer = setInterval(auto, 2000);
+            }
+
+            function auto() {
+                count++;
+                if (count > aSpan.length - 1) {
+                    count = 0;
+                }
+                fn();
+            }
+
+            function fn() {
+                for (var i = 0; i < aSpan.length; i++) {
+                    aSpan[i].className = '';
+                    aDiv[i].style.display = 'none';
+                }
+                aSpan[count].className = 'active';
+                aDiv[count].style.display = 'block';
+            }
+
+
+            for (var i = 0; i < aSpan.length; i++) {
+                aSpan[i].index = i;// 给每个span添加一个自定义的下标
+
+                // 每一个span添加点击
+                aSpan[i].onclick = function () {
+                    // 所有的span去掉class，所有的div隐藏
+                    for (var i = 0; i < aSpan.length; i++) {
+                        aSpan[i].className = '';
+                        aDiv[i].style.display = 'none';
+                    }
+
+                    // 对应的span添加class，对应的div显示
+                    this.className = 'active';
+                    aDiv[this.index].style.display = 'block';
+
+                    count = this.index;
+
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <span class="active">html</span>
+        <span>css</span>
+        <span>javascript</span>
+        <div style="display: block;">html</div>
+        <div>css</div>
+        <div>javascript</div>
+    </div>
+</body>
+
+</html>

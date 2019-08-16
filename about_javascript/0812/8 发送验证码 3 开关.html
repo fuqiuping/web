@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>发送验证码</button>
+
+    <script>
+        var btn = document.querySelector('button');
+        var timer = null;
+        var n = 5;
+        var onOff = true; // 开关
+
+        btn.onclick = function () {
+            if (onOff) {
+                onOff = false;
+            } else {
+                return;
+            }
+
+            // 多点几次，会出现多个定时器同时跑
+            timer = setInterval(function () {
+                n--;
+                btn.innerHTML = n + '秒后重新发送';
+
+                // 当n小于等于0时，重新发送
+                if (n <= 0) {
+                    clearInterval(timer);
+                    btn.innerHTML = '重新发送';
+                    n = 5;
+                    onOff = true;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

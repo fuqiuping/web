@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 50px 40px;
+        }
+
+        #box1 {
+            background: red;
+            /* position: relative; */
+        }
+
+        #box2 {
+            background: yellow;
+            /* position: relative; */
+        }
+
+        #box3 {
+            background: green;
+        }
+    </style>
+    <script>
+        // 元素.offsetLeft
+        // 元素.offsetTop
+        // 返回当前元素到离它最近的有定位属性的父级的距离，如果没有定位的父级，则到body的距离
+        // 元素.offsetParent
+
+        window.onload = function () {
+            var box3 = document.getElementById('box3');
+            // console.log(box3.offsetLeft);
+            // console.log(box3.offsetTop);
+            console.log(getPos(box3));
+
+
+
+            // 封装一个方法，获取元素到文档的距离
+            function getPos(obj) {
+                var o = {
+                    left: 0,
+                    top: 0
+                };
+
+                while (obj) {
+                    o.left += obj.offsetLeft;
+                    o.top += obj.offsetTop;
+                    obj = obj.offsetParent;
+                }
+
+                return o;
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

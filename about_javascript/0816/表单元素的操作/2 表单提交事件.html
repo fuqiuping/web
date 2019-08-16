@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 提交事件
+        // 表单.onsubmit = function(){}
+        // 可以在我们提交表单之前，对表单进行验证
+
+        window.onload = function () {
+            var form = document.getElementById('form1');
+            var userName = form.userName;
+            var pass = form.pass;
+
+            form.onsubmit = function () {
+                if (userName.value === '' || pass.value === '') {
+                    alert('哥们，请输入用户名和密码');
+                    return false;
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="get" id="form1">
+        <input type="text" name="userName">
+        <input type="password" name="pass">
+
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </form>
+</body>
+
+</html>

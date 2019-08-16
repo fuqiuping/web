@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="all">
+    <hr>
+    <p>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </p>
+
+    <script>
+        var all = document.getElementById('all');
+        var aInput = document.querySelectorAll('p input');
+
+        // 点全选
+        all.onclick = function () {
+            // console.log(this.checked);
+            for (var i = 0; i < aInput.length; i++) {
+                aInput[i].checked = this.checked;
+            }
+        }
+
+        // 点击单个
+        for (var i = 0; i < aInput.length; i++) {
+            aInput[i].onclick = function () {
+                var count = 0;
+                // 如果选中，则记一下，最后看计的个数同全部的input个数是否相等，相等则是全选的，否则不全选
+                for (var i = 0; i < aInput.length; i++) {
+                    if (aInput[i].checked) {
+                        count++;
+                    }
+                }
+                all.checked = (count === aInput.length); // 给全选赋值
+            }
+        }
+    </script>
+</body>
+
+</html>

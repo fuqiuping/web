@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var pic = document.getElementById('pic');
+            // 自定义的属性
+            pic.n = 1;
+
+            pic.onclick = function(){
+                // console.log(pic.n);
+                if(pic.n == 1){
+                    pic.src = 'img/on.png';
+                    pic.n = 2;
+                }else{
+                    pic.src = 'img/off.png';
+                    pic.n = 1;
+                }
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="img/off.png" id="pic" alt="">
+</body>
+
+</html>

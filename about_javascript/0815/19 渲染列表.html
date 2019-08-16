@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var data = [
+            { name: '刘备', sex: '男', age: 57, len: 100 },
+            { name: '张飞', sex: '男', age: 55, len: 120 },
+            { name: '关羽', sex: '男', age: 56, len: 150 },
+            { name: '周瑜', sex: '男', age: 30, len: 80 },
+            { name: '貂蝉', sex: '女', age: 18, len: 200 },
+            { name: '西施', sex: '女', age: 30, len: 50 }
+        ];
+
+        window.onload = function () {
+            var tbody = document.getElementsByTagName('tbody')[0];
+
+            for (var i = 0; i < data.length; i++) {
+                var d = data[i]; // 数据
+                // console.log(d);
+
+                var tr = document.createElement('tr'); // 每一条数据，创建一个tr
+                if (i % 2) {
+                    tr.style.background = '#fff';
+                } else {
+                    tr.style.background = '#ccc';
+                }
+
+                // 创建序号
+                var td = document.createElement('td');
+                td.innerHTML = i + 1;
+                tr.appendChild(td);
+
+                // 创建姓名
+                var td = document.createElement('td');
+                td.innerHTML = d.name;
+                tr.appendChild(td);
+
+                // 创建性别
+                var td = document.createElement('td');
+                td.innerHTML = d.sex;
+                tr.appendChild(td);
+
+                // 创建年龄
+                var td = document.createElement('td');
+                td.innerHTML = d.age;
+                tr.appendChild(td);
+
+                // 创建武力值
+                var td = document.createElement('td');
+                td.innerHTML = d.len;
+                tr.appendChild(td);
+
+                // 创建操作
+                var td = document.createElement('td');
+
+                var a = document.createElement('a');
+                a.href = 'javascript:;';
+                a.innerHTML = '删除';
+                a.onclick = function () {
+                    tbody.removeChild(this.parentNode.parentNode); // 删除tr
+
+                    // 调整隔行变色
+                    // var aTr = tbody.children; // 获取剩下的tr
+                    var aTr = tbody.rows; // 获取剩下的tr
+                    for (var i = 0; i < aTr.length; i++) {
+                        // 隔行变
+                        if (i % 2) {
+                            aTr[i].style.background = '#fff';
+                        } else {
+                            aTr[i].style.background = '#ccc';
+                        }
+                        // console.log(aTr[i].children[0]);
+                        // 调整序号
+                        aTr[i].children[0].innerHTML = i + 1;
+                    }
+                }
+                td.appendChild(a);
+
+
+                tr.appendChild(td);
+
+                tbody.appendChild(tr);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table width="500px" border="1" cellspacing='0'>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>武力值</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td>刘备</td>
+                <td>男</td>
+                <td>50</td>
+                <td>100</td>
+                <td><a href="javascript:;">删除</a></td>
+            </tr> -->
+        </tbody>
+    </table>
+</body>
+
+</html>

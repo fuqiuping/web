@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var pic = document.getElementById('pic');
+            var btn = document.getElementById('btn');
+
+            btn.onclick = function () {
+                // console.log(btn.innerHTML);
+                if (btn.innerHTML == '开') {
+                    // 如果条件为真，走这里
+                    pic.src = 'img/on.png';
+                    btn.innerHTML = '关';
+                } else {
+                    // 否则走这里
+                    pic.src = 'img/off.png';
+                    btn.innerHTML = '开';
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="img/off.png" id="pic" alt="">
+    <button id="btn">开</button>
+</body>
+
+</html>

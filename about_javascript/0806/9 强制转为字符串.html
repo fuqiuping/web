@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 将别的类型转换为字符串，不影响原来的类型
+        // 变量.toString();   不能针对undefined和null
+        // String(变量);    可以针对任意类型
+
+        var num = 10;
+        var s = num.toString();
+        console.log(s, num); // '10'
+
+        var b = true;
+        console.log(b.toString()); // 'true'
+
+        var n;
+        // console.log(n.toString());
+
+        // 对象转数组比较复杂
+        var arr = [1, 2, 3];
+        console.log(arr.toString());
+        console.log([true].toString());
+
+        // --------------------------------------
+        console.log(String(10));
+        console.log(String(true));
+        console.log(String(null)); // 'null'
+        console.log(String(undefined)); // 'undefined'
+        console.log(String([1, 2, 3])); // '1,2,3'
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

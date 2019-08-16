@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 转换成整数，从左向右一位一位的看，如果是数字，则提出来，不是数字，则到此为止，后面都不要
+        // parseInt(参数, 进制);
+
+        // parseFloat(参数); 转小数（同parseInt，但是它识别一个小数点，没有第二个参数）
+
+        // console.log(parseInt('12px')); // 12
+        // console.log(parseInt('12.34px')); // 12
+
+        // console.log(parseInt('a12.34px')); // NaN
+        // console.log(parseInt('   12.34px')); // 12
+        // console.log(parseInt('000012.34px')); // 12
+
+
+        // console.log(parseInt('070')); // 70 （IE8及以下，转成56，它当作8进制来转换）
+        // console.log(parseInt('070', 10)); // 70 （为了不出错误，最好把第二个参数加上）
+        
+
+        // ---------------------------------
+        console.log(parseInt('12.34亿')); // 12
+        
+        console.log(parseFloat('12.34亿')); // 12.34
+        console.log(parseFloat('12.3.4亿')); // 12.3
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
