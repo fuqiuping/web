@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 事件函数：事件发生的时候，执行的函数，就是事件函数
+        function fn() { }
+
+        box.onclick = fn; // fn是事件函数
+
+        fn(); // 普通函数
+
+        box.onclick = function () { // 事件函数
+            fn(); // 普通函数
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

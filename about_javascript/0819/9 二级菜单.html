@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 300px;
+            background: red;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName('button')[0];
+            var box = document.getElementsByTagName('div')[0];
+
+            btn.onclick = function (ev) {
+                var ev = ev || event; // 事件对象
+                // ev.stopPropagation(); // 标准浏览器
+                // ev.cancelBubble = true; // IE8及以下
+                stopPropagation(ev); // 兼容阻止冒泡
+                box.style.display = 'block';
+            }
+
+            document.onclick = function () {
+                // setTimeout(function () {
+                box.style.display = 'none';
+                // }, 2000);
+            }
+
+
+            // 解决方法：阻止冒泡
+            // 标准浏览器：ev.stopPropagation();    
+            // IE 浏览器：ev.cancelBubble = true;
+            // stop停止
+            // Propagation传播
+            // cancel取消
+            // Bubble泡泡
+
+            // 阻止冒泡的兼容
+            // 参数为事件对象
+            function stopPropagation(ev) {
+                if (ev.stopPropagation) {
+                    // IE9及以上
+                    ev.stopPropagation();
+                } else {
+                    // IE8及以下
+                    ev.cancelBubble = true;
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- box默认隐藏，点击按钮，box显示，点击页面中的任何地方，box隐藏 -->
+    <button>按钮</button>
+    <div id="box"></div>
+</body>
+
+</html>

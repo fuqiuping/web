@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 可以加在document 表单元素上
+        // onkeydown  onkeyup
+        // onkeypress
+        // oninput IE9及以上支持
+        window.onload = function () {
+            var input = document.getElementsByTagName('input')[0];
+
+            // 按下
+            // input.onkeydown = function () {
+            //     console.log(this.value);
+            // }
+
+            // 抬起
+            // input.onkeyup = function () {
+            //     console.log(this.value);
+            // }
+
+
+            // input.oninput = function () {
+            //     console.log(this.value);
+            // }
+
+            // --------------------------------
+            // 键盘事件的相关属性
+            input.onkeyup = function (ev) {
+                var ev = ev || event;
+                // console.log(ev.type);
+
+                // console.log(ev.key); // 键名（IE8及以下不支持）
+                console.log(ev.keyCode); // 健值
+                // 键值（a：65 z：90  0：48   9：57）
+                // 回车：13 空格：32  esc：27
+                // 左：37 上：38 右：39 下：40
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text">
+</body>
+
+</html>

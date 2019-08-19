@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var ul = document.getElementsByTagName('ul')[0];
+            var aLi = document.getElementsByTagName('li');
+            var input = document.getElementsByTagName('input')[0];
+            var btn = document.getElementsByTagName('button')[0];
+
+            // 创建li，添加到ul中
+            btn.onclick = function () {
+                var li = document.createElement('li');
+                li.innerHTML = input.value;
+                ul.appendChild(li);
+            }
+
+
+            // 给每个li添加点击事件
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].onclick = function () {
+                    this.style.background = 'red';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text">
+    <button>按钮</button>
+
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+</body>
+
+</html>

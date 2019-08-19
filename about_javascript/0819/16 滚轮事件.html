@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 事件
+        // ie/chrome : onmousewheel
+        // event.wheelDelta
+
+        // firefox : DOMMouseScroll 必须用addEventListener
+        // event.detail
+
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+            function fn() {
+                console.log(1);
+            }
+
+            // ie/chrome
+            // box.onmousewheel = fn;
+
+            // 火狐
+            box.addEventListener('DOMMouseScroll', fn, false);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 在盒子上滚动滚轮，向上滚，高度减小，向下滚，高度增加 -->
+    <div id="box"></div>
+</body>
+
+</html>

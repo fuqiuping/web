@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            function fn1() {
+                console.log(1);
+            }
+            function fn2() {
+                console.log(2);
+            }
+
+            // 给box添加两个点击事件，这样写是赋值，后面的会覆盖前面的
+            // box.onclick = fn1;
+            // box.onclick = null; // 普通的绑定的解绑
+
+            // ---------------------------------------------
+            // 元素.addEventListener(事件类型, 要执行的函数, 是否捕获)
+            // 是否捕获：如果是true，则捕获，否则冒泡
+            // IE8及以下不支持
+
+            // 解绑：元素.removeEventListener(事件类型, 要执行的函数, 是否捕获)
+
+            // --------------------
+            // 元素.attachEvent(加on的事件类型, 要执行的函数);
+            // 它没有第三个参数，只支持冒泡
+
+            // 解绑：元素.detachEvent(加on的事件类型, 要执行的函数);
+
+            // --------------
+
+            // box.addEventListener('click', fn1, false);
+            // box.addEventListener('click', fn2, false);
+            // box.removeEventListener('click', fn1, false);
+
+            // box.attachEvent('onclick', fn1);
+            // box.attachEvent('onclick', fn2);
+            // box.detachEvent('onclick', fn2);
+
+            // ---------------------------------
+            // 解绑兼容处理
+            function unbind(obj, event, callback) {
+                if (obj.removeEventListener) {
+                    // IE9及以上
+                    obj.removeEventListener(event, callback, false);
+                } else {
+                    // IE8及以下
+                    obj.detachEvent('on' + event, callback);
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

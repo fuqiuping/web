@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 有字符串：
+        str = 'login.php?name=LILI&age=3';
+        // 封装一个方法，传入参数name，返回LILI,传入参数age，返回3
+
+        console.log(fn(str, 'name'));
+        console.log(fn(str, 'age'));
+
+
+        function fn(str, key) {
+            var n = str.indexOf('?');
+            str = str.slice(n + 1); // name=LILI&age=3
+            var arr = str.split('&'); // [ "name=LILI", "age=3" ]
+
+            for (var i = 0; i < arr.length; i++) {
+                var arr1 = arr[i].split('=');
+                // console.log(arr1); // [ "name", "LILI" ]  [ "age", "3" ]
+                if (arr1[0] === key) {
+                    return arr1[1];
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

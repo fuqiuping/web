@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        // 滚轮方向的兼容，上：120  下：-120
+        function wheelDelta(ev) {
+            if (ev.wheelDelta) {
+                // ie/chrome
+                return ev.wheelDelta;
+            } else {
+                // firefox
+                return ev.detail * -40;
+            }
+        }
+
+        function bind(obj, event, callback) {
+            if (obj.addEventListener) {
+                // IE9及以上
+                obj.addEventListener(event, callback, false);
+            } else {
+                // IE8及以下
+                obj.attachEvent('on' + event, callback);
+            }
+        }
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var h = box.clientHeight; // 盒子的高度
+
+            function fn(ev) {
+                var ev = ev || event;
+                if (wheelDelta(ev) > 0) {
+                    // 向上
+                    h--;
+                } else {
+                    // 向下
+                    h++;
+                }
+                box.style.height = h + 'px';
+            }
+
+
+            bind(box, 'mousewheel', fn); // ie/chrome
+            bind(box, 'DOMMouseScroll', fn); // 火狐
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 在盒子上滚动滚轮，向上滚，高度减小，向下滚，高度增加 -->
+    <div id="box"></div>
+</body>
+
+
+</html>

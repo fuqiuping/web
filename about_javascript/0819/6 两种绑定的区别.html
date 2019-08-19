@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            function fn1() {
+                console.log(1);
+                console.log(this === window);
+
+            }
+            function fn2() {
+                console.log(2);
+                console.log(this === window);
+            }
+
+            // ---------------------------------------------
+            // 元素.addEventListener(事件类型, 要执行的函数, 是否捕获)
+            // 是否捕获：如果是true，则捕获，否则冒泡
+            // IE8及以下不支持
+
+            // --------------------
+            // 元素.attachEvent(加on的事件类型, 要执行的函数);
+            // 它没有第三个参数，只支持冒泡
+
+            // --------------
+
+            // box.addEventListener('click', fn1, false);
+            // box.addEventListener('click', fn2, false);
+
+            box.attachEvent('onclick', fn1);
+            box.attachEvent('onclick', fn2);
+
+            // 两者区别
+            // 1、标准可以有捕获或者冒泡，但是非标准只有冒泡
+            // 2、标准的事件没有on，非标准有on
+            // 3、执行顺序，非标准是倒序
+            // 4、标准执行函数中的this是这个元素，而非标准是window
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

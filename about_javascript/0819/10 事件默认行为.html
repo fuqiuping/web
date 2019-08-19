@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 事件的默认行为，即赋予了元素特殊的操作
+        // 标准： ev.preventDefault()
+        // 非标准：ev.returnValue = false;
+        // prevent阻止
+        // Default默认
+
+        window.onload = function () {
+            var a = document.getElementsByTagName('a')[0];
+            a.onclick = function (ev) {
+                var ev = ev || event;
+                // ev.preventDefault(); // IE9及以上
+                // ev.returnValue = false; // IE8及以下
+                preventDefault(ev);
+            }
+        }
+
+        // 参数为事件对象
+        function preventDefault(ev) {
+            if (ev.preventDefault) {
+                // IE9及以上
+                ev.preventDefault();
+            } else {
+                // IE8及以下
+                ev.returnValue = false;
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 3000px;">
+    <a href="https://www.baidu.com/">百度</a>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 150px;
+            height: 300px;
+            background: red;
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+
+            // 点击右键
+            document.oncontextmenu = function (ev) {
+                var ev = ev || event;
+
+                // 阻止默认的
+                preventDefault(ev);
+
+                // 开启自己的
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                box.style.display = 'block';
+                box.style.left = ev.clientX + 'px';
+                box.style.top = ev.clientY + scrollTop + 'px';
+
+            }
+
+            // 页面点击隐藏
+            document.onclick = function () {
+                box.style.display = 'none';
+            }
+        }
+
+
+        // 参数为事件对象
+        function preventDefault(ev) {
+            if (ev.preventDefault) {
+                // IE9及以上
+                ev.preventDefault();
+            } else {
+                // IE8及以下
+                ev.returnValue = false;
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 3000px;">
+    <div id="box"></div>
+</body>
+
+</html>

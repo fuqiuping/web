@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = 'haj123sdk54hask33dkhalsd879';
+        console.log(fn(str)); // [123, 54, 33, 879]
+
+        function fn(str) {
+            var arr = [];
+            var s = ''; // 存储找到的数字
+
+            for (var i = 0; i < str.length; i++) {
+                // console.log(str[i]);
+                var v = str[i];
+                if (v >= 0 && v <= 9) {
+                    // 找到数字，向s中添加
+                    s += v;
+                } else {
+                    // 找不到数字，如果s有值，则向数组中添加，s置空
+                    if (s) {
+                        arr.push(s);
+                        s = '';
+                    }
+                }
+            }
+
+            if (s) {
+                arr.push(s);
+                s = '';
+            }
+            return arr;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

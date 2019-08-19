@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = 'haj123sdk54hask33dkhalsd879';
+        console.log(fn(str)); // [123, 54, 33, 879]
+
+        function fn(str) {
+            var s = '';
+
+            // 把每个字符用Number转成数字，再拼接到s中
+            for (var i = 0; i < str.length; i++) {
+                s += Number(str[i])
+            }
+
+            var arr = s.split('NaN'); // 再把s用NaN拆分
+
+            return arr.filter(function (item) {
+                return item;
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
